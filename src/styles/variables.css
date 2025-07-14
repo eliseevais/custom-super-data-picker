@@ -1,47 +1,38 @@
 :root {
-  /* Основной цвет */
-  --color-primary: #2196f3;            /* Ярко-голубой */
-  --color-primary-hover: #1e88e5;      /* Немного темнее при наведении */
-  --color-primary-active: #1565c0;     /* Активный/нажатый */
+  --color-primary: #2196f3;
+  --color-primary-hover: #1e88e5;
+  --color-primary-active: #1565c0;
 
-  /* Текст */
-  --color-text-dark: #0d47a1;          /* Глубокий синий */
-  --color-text-medium: #1976d2;        /* Средне-синий */
-  --color-text-light: #e3f2fd;         /* Очень светлый голубой (для светлого текста на тёмном фоне) */
+  --color-text-dark: #0d47a1;
+  --color-text-medium: #1976d2;
+  --color-text-light: #e3f2fd;
 
-  /* Фоны */
   --color-bg-white: #ffffff;
-  --color-bg-light: #e3f2fd;           /* Светло-голубой фон */
-  --color-bg-dark: #bbdefb;            /* Более насыщенный голубой */
+  --color-bg-light: #e3f2fd;
+  --color-bg-dark: #bbdefb;
 
-  /* Границы */
-  --color-border-light: #bbdefb;       /* Светло-голубая граница */
-  --color-border-medium: #64b5f6;      /* Средне-голубая */
-  --color-border-dark: #42a5f5;        /* Тёмно-голубая */
+  --color-border-light: #bbdefb;
+  --color-border-medium: #64b5f6;
+  --color-border-dark: #42a5f5;
 
-  /* Состояния */
-  --color-error: #ef5350;              /* Мягкий красный */
-  --color-warning: #ffb300;            /* Ярко-оранжевый */
-  --color-success: #4caf50;            /* Зелёный для успеха */
-  --color-disabled: #e3f2fd;           /* Светло-голубой фон для неактивных элементов */
-  --color-disabled-text: #90caf9;      /* Светлый текст на фоне disabled */
+  --color-error: #ef5350;
+  --color-warning: #ffb300;
+  --color-success: #4caf50;
+  --color-disabled: #e3f2fd;
+  --color-disabled-text: #90caf9;
 
-  /* Тени */
   --shadow-sm: 0 1px 3px rgba(33, 150, 243, 0.1);
   --shadow-md: 0 4px 6px rgba(33, 150, 243, 0.15);
   --shadow-lg: 0 8px 16px rgba(33, 150, 243, 0.2);
 
-  /* Радиусы */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
 
-  /* Отступы */
   --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 24px;
 
-  /* Размеры шрифта */
   --text-sm: 14px;
   --text-md: 16px;
   --text-lg: 18px;

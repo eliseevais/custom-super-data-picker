@@ -1,0 +1,18 @@
+.refreshButton {
+  padding: 0 var(--space-lg);
+  min-width: 100px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refreshButton:hover {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-border-dark);
+}

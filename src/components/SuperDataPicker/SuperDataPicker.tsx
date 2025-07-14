@@ -1,13 +1,19 @@
 import {useState} from 'react';
-import s from './SuperDataPicker.module.css';
 import {formatDisplayDate} from '../../utils/dateUtils';
 import {constants} from '../../constants/constants';
 import {useTimeRange} from '../../hooks/useTimeRange';
-import {TimeRangeDropdown} from "../TimeRangeDropdown/TimeRangeDropdown.tsx";
-import {FaRegCalendarAlt} from 'react-icons/fa';
+import {TimeRangeDropdown} from '../TimeRangeDropdown/TimeRangeDropdown';
+import {SwitchControls} from '../SwitchControls/SwitchControls';
+import {DateRangeDisplay} from '../DateRangeDisplay/DateRangeDisplay';
+import {RefreshButton} from '../RefreshButton/RefreshButton';
+import s from './SuperDataPicker.module.css';
 
 export const SuperDataPicker = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showQuickSelect, setShowQuickSelect] = useState(true);
+  const [showRecentlyUsed, setShowRecentlyUsed] = useState(true);
+  const [showManualInput, setShowManualInput] = useState(true);
+
   const {
     timeRange,
     recentlyUsed,
@@ -21,31 +27,30 @@ export const SuperDataPicker = () => {
 
   const closeDropdown = () => setIsOpen(false);
 
-  const onClickInputLineHandler = () => {
-    setIsOpen(prev => !prev);
-  };
-
-  const onRefreshHandler = () => {
-    if (!isInvalid) {
-      handleApply(closeDropdown);
-    }
-  };
-
   return (
     <div className={s.container}>
       <h1>Super Data Picker</h1>
+
+      <SwitchControls
+        showQuickSelect={showQuickSelect}
+        setShowQuickSelect={setShowQuickSelect}
+        showRecentlyUsed={showRecentlyUsed}
+        setShowRecentlyUsed={setShowRecentlyUsed}
+        showManualInput={showManualInput}
+        setShowManualInput={setShowManualInput}
+      />
+
       <div className={s.inputLineAndRefreshButton}>
-        <div className={s.inputLine} onClick={onClickInputLineHandler}>
-          <div><FaRegCalendarAlt className={s.calendarIcon}/></div>
-          <div>{formatDisplayDate(timeRange.start)}</div>
-          <span> → </span>
-          <div>{formatDisplayDate(timeRange.end)}</div>
-        </div>
+        <DateRangeDisplay
+          start={formatDisplayDate(timeRange.start)}
+          end={formatDisplayDate(timeRange.end)}
+          onClick={() => setIsOpen(!isOpen)}
+        />
 
-        <button className={s.refreshButton} onClick={onRefreshHandler} disabled={isInvalid}>
-          Refresh
-        </button>
-
+        <RefreshButton
+          disabled={isInvalid}
+          onClick={() => !isInvalid && handleApply(closeDropdown)}
+        />
       </div>
 
       {isOpen && (
@@ -57,6 +62,9 @@ export const SuperDataPicker = () => {
           isInvalid={isInvalid}
           onQuickSelect={handleQuickSelect}
           onDateTimeChange={handleDateTimeChange}
+          showQuickSelect={showQuickSelect}
+          showRecentlyUsed={showRecentlyUsed}
+          showManualInput={showManualInput}
         />
       )}
     </div>
