@@ -1,0 +1,30 @@
+.recentlyUsedList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  justify-content: space-between;
+}
+
+.recentlyUsedItem {
+  padding: var(--space-sm) var(--space-sm);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  color: var(--color-text-dark);
+  background: var(--color-bg-light);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.recentlyUsedItem:hover {
+  background: var(--color-bg-white);
+  border-color: var(--color-border-medium);
+}
+
+.sectionTitle {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-medium);
+}

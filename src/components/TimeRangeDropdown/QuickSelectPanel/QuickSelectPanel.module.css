@@ -1,0 +1,30 @@
+.quickSelectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.quickSelectItem {
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  color: var(--color-text-dark);
+  background: var(--color-bg-light);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  text-align: left;
+}
+
+.quickSelectItem:hover {
+  background: var(--color-bg-white);
+  border-color: var(--color-border-medium);
+}
+
+.sectionTitle {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-medium);
+}

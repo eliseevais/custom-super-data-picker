@@ -1,0 +1,45 @@
+.absoluteTime {
+  position: relative;
+}
+
+.sectionTitle {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-medium);
+}
+
+.inputWrapper {
+  position: relative;
+  width: 50%;
+}
+
+
+.timeInputs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  width: 100%;
+}
+
+.error {
+  color: var(--color-error);
+  font-size: var(--text-sm);
+  margin: calc(-1 * var(--space-sm)) 0 var(--space-md) 0;
+  font-weight: 500;
+}
+
+
+.calendarIconRight {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  fill: var(--color-text-medium);
+  user-select: none;
+}
+
