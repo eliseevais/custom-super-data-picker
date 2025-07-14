@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import {FaRegCalendarAlt} from 'react-icons/fa';
 import s from './DateTimeInput.module.css';
 
 type Props = {
@@ -7,13 +9,32 @@ type Props = {
 };
 
 export const DateTimeInput = ({ value, placeholder, onChange }: Props) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleIconClick = () => {
+    if (inputRef.current) {
+      inputRef.current.showPicker();
+    }
+  };
+
   return (
-    <input
-      type="datetime-local"
-      value={value.startsWith('now') ? '' : value}
-      onChange={e => onChange(e.target.value)}
-      placeholder={placeholder}
-      className={s.timeInput}
-    />
+    <div className={s.inputContainer}>
+      <input
+        ref={inputRef}
+        type="datetime-local"
+        value={value.startsWith('now') ? '' : value}
+        onChange={e => onChange(e.target.value)}
+        placeholder={placeholder}
+        className={s.timeInput}
+      />
+      <button
+        type="button"
+        className={s.calendarButton}
+        onClick={handleIconClick}
+        aria-label="Open calendar"
+      >
+       <FaRegCalendarAlt className={s.calendarIcon} />
+      </button>
+    </div>
   );
 };

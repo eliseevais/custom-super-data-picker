@@ -1,15 +1,53 @@
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
 .timeInput {
+  width: 100%; /* Возвращаем 100% ширину */
   padding: var(--space-sm);
+  padding-right: calc(var(--space-sm) + 1.2rem); /* Добавляем место для иконки */
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-sm);
   font-size: var(--text-sm);
   color: var(--color-text-dark);
-  background: var(--color-bg-white);
+  background: var(--color-bg-light);
   transition: border-color 0.2s ease;
+  appearance: none;
+}
+
+/* Скрываем стандартную иконку календаря */
+.timeInput::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }
 
 .timeInput:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: var(--shadow-sm);
+}
+
+.calendarButton {
+  position: absolute;
+  right: var(--space-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-dark);
+  transition: color 0.2s ease;
+}
+
+.calendarButton:hover {
+  color: var(--color-primary);
+}
+
+.calendarIcon {
+  font-size: var(--text-sm);
 }

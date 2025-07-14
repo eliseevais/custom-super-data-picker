@@ -14,6 +14,9 @@
   width: 50%;
 }
 
+.text {
+  padding: var(--space-sm);
+}
 
 .timeInputs {
   display: flex;
@@ -29,7 +32,6 @@
   margin: calc(-1 * var(--space-sm)) 0 var(--space-md) 0;
   font-weight: 500;
 }
-
 
 .calendarIconRight {
   position: absolute;

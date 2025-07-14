@@ -18,7 +18,7 @@ export const ManualInputPanel = ({ start, end, isInvalid, onChange }: Props) => 
           placeholder="Start date and time"
           onChange={value => onChange(value, 'start')}
         />
-        <span>to</span>
+        <div className={s.text}>to</div>
         <DateTimeInput
           value={end}
           placeholder="End date and time"

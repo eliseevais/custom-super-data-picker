@@ -19,7 +19,7 @@ export const useTimeRange = (initial: TimeRange) => {
       const updated = exists
         ? [newRange, ...prev.filter(r => r !== exists)]
         : [newRange, ...prev];
-      return updated.slice(0, 5);
+      return updated.slice(0, 6);
     });
   };
 
