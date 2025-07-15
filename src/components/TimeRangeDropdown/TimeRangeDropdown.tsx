@@ -1,8 +1,8 @@
-import s from './TimeRangeDropdown.module.css';
-import {QuickSelectPanel} from './QuickSelectPanel/QuickSelectPanel.tsx';
-import {RecentlyUsedPanel} from './RecentlyUsedPanel/RecentlyUsedPanel.tsx';
-import {ManualInputPanel} from './ManualInputPanel/ManualInputPanel.tsx';
-import type {TimeRange} from '../../types/types.ts';
+import s from "./TimeRangeDropdown.module.css";
+import { QuickSelectPanel } from "./QuickSelectPanel/QuickSelectPanel.tsx";
+import { RecentlyUsedPanel } from "./RecentlyUsedPanel/RecentlyUsedPanel.tsx";
+import { ManualInputPanel } from "./ManualInputPanel/ManualInputPanel.tsx";
+import type { TimeRange } from "../../types/types.ts";
 
 type Props = {
   quickSelectItems: { display: string; timeRange: TimeRange }[];
@@ -11,38 +11,32 @@ type Props = {
   localEnd: string;
   isInvalid: boolean;
   onQuickSelect: (range: TimeRange) => void;
-  onDateTimeChange: (value: string, type: 'start' | 'end') => void;
+  onDateTimeChange: (value: string, type: "start" | "end") => void;
   showQuickSelect: boolean;
   showRecentlyUsed: boolean;
   showManualInput: boolean;
 };
 
 export const TimeRangeDropdown = ({
-                                    quickSelectItems,
-                                    recentlyUsed,
-                                    localStart,
-                                    localEnd,
-                                    isInvalid,
-                                    onQuickSelect,
-                                    onDateTimeChange,
-                                    showQuickSelect,
-                                    showRecentlyUsed,
-                                    showManualInput,
-                                  }: Props) => {
+  quickSelectItems,
+  recentlyUsed,
+  localStart,
+  localEnd,
+  isInvalid,
+  onQuickSelect,
+  onDateTimeChange,
+  showQuickSelect,
+  showRecentlyUsed,
+  showManualInput,
+}: Props) => {
   return (
     <div className={s.dropdown}>
       {showQuickSelect && (
-        <QuickSelectPanel
-          items={quickSelectItems}
-          onSelect={onQuickSelect}
-        />
+        <QuickSelectPanel items={quickSelectItems} onSelect={onQuickSelect} />
       )}
 
       {showRecentlyUsed && recentlyUsed.length > 0 && (
-        <RecentlyUsedPanel
-          items={recentlyUsed}
-          onSelect={onQuickSelect}
-        />
+        <RecentlyUsedPanel items={recentlyUsed} onSelect={onQuickSelect} />
       )}
 
       {showManualInput && (

@@ -1,6 +1,6 @@
-import { useRef } from 'react';
-import {FaRegCalendarAlt} from 'react-icons/fa';
-import s from './DateTimeInput.module.css';
+import { useRef } from "react";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import s from "./DateTimeInput.module.css";
 
 type Props = {
   value: string;
@@ -22,8 +22,8 @@ export const DateTimeInput = ({ value, placeholder, onChange }: Props) => {
       <input
         ref={inputRef}
         type="datetime-local"
-        value={value.startsWith('now') ? '' : value}
-        onChange={e => onChange(e.target.value)}
+        value={value.startsWith("now") ? "" : value}
+        onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         className={s.timeInput}
       />
@@ -33,7 +33,7 @@ export const DateTimeInput = ({ value, placeholder, onChange }: Props) => {
         onClick={handleIconClick}
         aria-label="Open calendar"
       >
-       <FaRegCalendarAlt className={s.calendarIcon} />
+        <FaRegCalendarAlt className={s.calendarIcon} />
       </button>
     </div>
   );

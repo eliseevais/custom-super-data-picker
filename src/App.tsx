@@ -1,10 +1,10 @@
-import './App.css';
-import {SuperDataPicker} from "./components/SuperDataPicker/SuperDataPicker.tsx";
+import "./App.css";
+import { SuperDataPicker } from "./components/SuperDataPicker/SuperDataPicker.tsx";
 
 function App() {
   return (
     <div className="App">
-      <SuperDataPicker/>
+      <SuperDataPicker />
     </div>
   );
 }

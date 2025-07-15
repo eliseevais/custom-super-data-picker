@@ -1,5 +1,5 @@
-import s from './QuickSelectPanel.module.css';
-import type { TimeRange } from '../../../types/types.ts';
+import s from "./QuickSelectPanel.module.css";
+import type { TimeRange } from "../../../types/types.ts";
 
 type Props = {
   items: { display: string; timeRange: TimeRange }[];
@@ -22,4 +22,3 @@ export const QuickSelectPanel = ({ items, onSelect }: Props) => (
     </div>
   </div>
 );
-

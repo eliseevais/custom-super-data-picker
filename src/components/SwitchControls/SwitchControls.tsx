@@ -1,5 +1,5 @@
-import s from './SwitchControls.module.css';
-import {SwitchToggle} from './SwitchToggle/SwitchToggle.tsx';
+import s from "./SwitchControls.module.css";
+import { SwitchToggle } from "./SwitchToggle/SwitchToggle.tsx";
 
 type Props = {
   showQuickSelect: boolean;
@@ -11,13 +11,13 @@ type Props = {
 };
 
 export const SwitchControls = ({
-                                 showQuickSelect,
-                                 showRecentlyUsed,
-                                 showManualInput,
-                                 setShowQuickSelect,
-                                 setShowRecentlyUsed,
-                                 setShowManualInput,
-                               }: Props) => {
+  showQuickSelect,
+  showRecentlyUsed,
+  showManualInput,
+  setShowQuickSelect,
+  setShowRecentlyUsed,
+  setShowManualInput,
+}: Props) => {
   return (
     <div className={s.switchControls}>
       <SwitchToggle

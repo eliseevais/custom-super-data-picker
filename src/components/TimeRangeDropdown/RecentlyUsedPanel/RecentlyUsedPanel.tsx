@@ -1,6 +1,6 @@
-import s from './RecentlyUsedPanel.module.css';
-import { formatDisplayDate } from '../../../utils/dateUtils.ts';
-import type { TimeRange } from '../../../types/types.ts';
+import s from "./RecentlyUsedPanel.module.css";
+import { formatDisplayDate } from "../../../utils/dateUtils.ts";
+import type { TimeRange } from "../../../types/types.ts";
 
 type Props = {
   items: TimeRange[];
@@ -27,4 +27,3 @@ export const RecentlyUsedPanel = ({ items, onSelect }: Props) => {
     </div>
   );
 };
-

@@ -1,5 +1,5 @@
-import s from './RefreshButton.module.css';
-import { FiRefreshCw } from 'react-icons/fi';
+import s from "./RefreshButton.module.css";
+import { FiRefreshCw } from "react-icons/fi";
 
 type Props = {
   disabled: boolean;

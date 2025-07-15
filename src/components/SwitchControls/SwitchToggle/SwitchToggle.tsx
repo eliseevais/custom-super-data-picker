@@ -1,4 +1,4 @@
-import s from './SwitchToggle.module.css';
+import s from "./SwitchToggle.module.css";
 
 type Props = {
   label: string;

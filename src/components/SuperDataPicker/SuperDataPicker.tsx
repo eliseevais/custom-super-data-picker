@@ -1,12 +1,12 @@
-import {useState} from 'react';
-import {formatDisplayDate} from '../../utils/dateUtils';
-import {constants} from '../../constants/constants';
-import {useTimeRange} from '../../hooks/useTimeRange';
-import {TimeRangeDropdown} from '../TimeRangeDropdown/TimeRangeDropdown';
-import {SwitchControls} from '../SwitchControls/SwitchControls';
-import {DateRangeDisplay} from '../DateRangeDisplay/DateRangeDisplay';
-import {RefreshButton} from '../RefreshButton/RefreshButton';
-import s from './SuperDataPicker.module.css';
+import { useState } from "react";
+import { formatDisplayDate } from "../../utils/dateUtils";
+import { constants } from "../../constants/constants";
+import { useTimeRange } from "../../hooks/useTimeRange";
+import { TimeRangeDropdown } from "../TimeRangeDropdown/TimeRangeDropdown";
+import { SwitchControls } from "../SwitchControls/SwitchControls";
+import { DateRangeDisplay } from "../DateRangeDisplay/DateRangeDisplay";
+import { RefreshButton } from "../RefreshButton/RefreshButton";
+import s from "./SuperDataPicker.module.css";
 
 export const SuperDataPicker = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,7 @@ export const SuperDataPicker = () => {
     handleQuickSelect,
     handleApply,
     handleDateTimeChange,
-  } = useTimeRange({start: 'now-1h', end: 'now'});
+  } = useTimeRange({ start: "now-1h", end: "now" });
 
   const closeDropdown = () => setIsOpen(false);
 

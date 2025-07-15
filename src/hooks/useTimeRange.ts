@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { validateTimeRange } from '../utils/dateUtils';
+import { useState } from "react";
+import { validateTimeRange } from "../utils/dateUtils";
 import type { TimeRange } from "../types/types.ts";
 
 export const useTimeRange = (initial: TimeRange) => {
   const [timeRange, setTimeRange] = useState<TimeRange>(initial);
   const [recentlyUsed, setRecentlyUsed] = useState<TimeRange[]>([
-    { start: 'now-15m', end: 'now' },
-    { start: 'now-1d', end: 'now' },
+    { start: "now-15m", end: "now" },
+    { start: "now-1d", end: "now" },
   ]);
   const [localStart, setLocalStart] = useState(initial.start);
   const [localEnd, setLocalEnd] = useState(initial.end);
@@ -14,10 +14,12 @@ export const useTimeRange = (initial: TimeRange) => {
 
   const handleTimeChange = (newRange: TimeRange) => {
     setTimeRange(newRange);
-    setRecentlyUsed(prev => {
-      const exists = prev.find(r => r.start === newRange.start && r.end === newRange.end);
+    setRecentlyUsed((prev) => {
+      const exists = prev.find(
+        (r) => r.start === newRange.start && r.end === newRange.end,
+      );
       const updated = exists
-        ? [newRange, ...prev.filter(r => r !== exists)]
+        ? [newRange, ...prev.filter((r) => r !== exists)]
         : [newRange, ...prev];
       return updated.slice(0, 6);
     });
@@ -44,8 +46,8 @@ export const useTimeRange = (initial: TimeRange) => {
     }
   };
 
-  const handleDateTimeChange = (value: string, type: 'start' | 'end') => {
-    if (type === 'start') {
+  const handleDateTimeChange = (value: string, type: "start" | "end") => {
+    if (type === "start") {
       setLocalStart(value);
     } else {
       setLocalEnd(value);
