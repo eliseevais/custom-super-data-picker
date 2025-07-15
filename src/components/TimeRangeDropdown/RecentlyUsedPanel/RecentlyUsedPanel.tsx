@@ -12,7 +12,7 @@ export const RecentlyUsedPanel = ({ items, onSelect }: Props) => {
 
   return (
     <div className={s.recentlyUsed}>
-      <h4 className={s.sectionTitle}>Recently Used</h4>
+      <h4 className={s.sectionTitle}>Recently used</h4>
       <div className={s.recentlyUsedList}>
         {items.map((range, i) => (
           <button
