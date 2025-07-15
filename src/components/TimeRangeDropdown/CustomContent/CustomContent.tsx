@@ -1,10 +1,19 @@
+import { useState } from "react";
 import s from "./CustomContent.module.css";
 
 export const CustomContent = () => {
+  const [text, setText] = useState("");
+
   return (
     <div className={s.content}>
       <h4 className={s.sectionTitle}>Custom content</h4>
-      <div className={s.text}>Hello world!</div>
+      <textarea
+        className={s.text}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Type your text here"
+        rows={4}
+      />
     </div>
   );
 };

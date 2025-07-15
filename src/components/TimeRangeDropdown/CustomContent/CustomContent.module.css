@@ -4,6 +4,7 @@
 }
 
 .sectionTitle {
+  margin-top: 0;
   margin-bottom: var(--space-sm);
   font-size: var(--text-sm);
   font-weight: 600;
@@ -22,9 +23,15 @@
   transition:
       background 0.2s ease,
       border-color 0.2s ease;
+  resize: vertical;
+  min-height: 2rem;
+  max-height: 4rem;
+  line-height: 1.4;
 }
 
-.text:hover {
+.text:hover,
+.text:focus {
   background: var(--color-bg-white);
   border-color: var(--color-border-medium);
+  outline: none;
 }
