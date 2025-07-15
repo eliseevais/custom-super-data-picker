@@ -1,5 +1,5 @@
-import s from "./SwitchControls.module.css";
 import { SwitchToggle } from "./SwitchToggle/SwitchToggle";
+import s from "./SwitchControls.module.css";
 
 type Props = {
   showCommonlyUsed: boolean;
@@ -8,6 +8,9 @@ type Props = {
   setShowCommonlyUsed: (value: boolean) => void;
   setShowRecentlyUsed: (value: boolean) => void;
   setShowManualInput: (value: boolean) => void;
+
+  showCustomContent: boolean;
+  setShowCustomContent: (value: boolean) => void;
 
   showRefreshButton: boolean;
   setShowRefreshButton: (value: boolean) => void;
@@ -24,6 +27,9 @@ export const SwitchControls = ({
   setShowCommonlyUsed,
   setShowRecentlyUsed,
   setShowManualInput,
+
+  showCustomContent,
+  setShowCustomContent,
 
   showRefreshButton,
   setShowRefreshButton,
@@ -50,6 +56,11 @@ export const SwitchControls = ({
           label="Manual input"
           checked={showManualInput}
           onChange={() => setShowManualInput(!showManualInput)}
+        />
+        <SwitchToggle
+          label="Show custom content"
+          checked={showCustomContent}
+          onChange={() => setShowCustomContent(!showCustomContent)}
         />
       </fieldset>
 

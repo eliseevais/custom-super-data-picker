@@ -1,8 +1,9 @@
-import s from "./TimeRangeDropdown.module.css";
 import { CommonlyUsedPanel } from "./CommonlyUsedPanel/CommonlyUsedPanel.tsx";
 import { RecentlyUsedPanel } from "./RecentlyUsedPanel/RecentlyUsedPanel.tsx";
 import { ManualInputPanel } from "./ManualInputPanel/ManualInputPanel.tsx";
 import type { TimeRange } from "../../types/types.ts";
+import { CustomContent } from "./CustomContent/CustomContent.tsx";
+import s from "./TimeRangeDropdown.module.css";
 
 type Props = {
   commonlyUsedItems: { display: string; timeRange: TimeRange }[];
@@ -15,6 +16,7 @@ type Props = {
   showCommonlyUsed: boolean;
   showRecentlyUsed: boolean;
   showManualInput: boolean;
+  showCustomContent?: boolean;
 };
 
 export const TimeRangeDropdown = ({
@@ -28,9 +30,12 @@ export const TimeRangeDropdown = ({
   showCommonlyUsed,
   showRecentlyUsed,
   showManualInput,
+  showCustomContent,
 }: Props) => {
   return (
     <div className={s.dropdown}>
+      {showCustomContent && <CustomContent />}
+
       {showCommonlyUsed && (
         <CommonlyUsedPanel
           items={commonlyUsedItems}

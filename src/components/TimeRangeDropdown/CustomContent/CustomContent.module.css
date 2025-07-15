@@ -1,0 +1,30 @@
+.content {
+  width: 100%;
+  padding-bottom: var(--space-sm);
+}
+
+.sectionTitle {
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-medium);
+}
+
+.text {
+  width: 100%;
+  padding: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--color-text-dark);
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  text-align: left;
+  transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+}
+
+.text:hover {
+  background: var(--color-bg-white);
+  border-color: var(--color-border-medium);
+}

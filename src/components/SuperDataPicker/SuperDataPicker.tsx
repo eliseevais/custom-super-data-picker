@@ -10,9 +10,12 @@ import s from "./SuperDataPicker.module.css";
 
 export const SuperDataPicker = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const [showCommonlyUsed, setShowCommonlyUsed] = useState(true);
   const [showRecentlyUsed, setShowRecentlyUsed] = useState(true);
   const [showManualInput, setShowManualInput] = useState(true);
+
+  const [showCustomContent, setShowCustomContent] = useState(false);
 
   const [showRefreshButton, setShowRefreshButton] = useState(true);
   const [refreshFilled, setRefreshFilled] = useState(true);
@@ -42,6 +45,8 @@ export const SuperDataPicker = () => {
         setShowRecentlyUsed={setShowRecentlyUsed}
         showManualInput={showManualInput}
         setShowManualInput={setShowManualInput}
+        showCustomContent={showCustomContent}
+        setShowCustomContent={setShowCustomContent}
         showRefreshButton={showRefreshButton}
         setShowRefreshButton={setShowRefreshButton}
         refreshFilled={refreshFilled}
@@ -79,6 +84,7 @@ export const SuperDataPicker = () => {
           showCommonlyUsed={showCommonlyUsed}
           showRecentlyUsed={showRecentlyUsed}
           showManualInput={showManualInput}
+          showCustomContent={showCustomContent}
         />
       )}
     </div>

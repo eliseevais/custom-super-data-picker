@@ -3,24 +3,19 @@
   flex-direction: column;
   gap: var(--space-md);
   width: 100%;
-  max-width: 40rem;
-  border-radius: var(--radius-md);
+  max-width: 44rem;
 }
 
 .controlGroup {
   display: flex;
-  flex-wrap: nowrap;
-  gap: var(--space-sm);
+  justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
   border: none;
-  padding: 0.5rem;
-  background: var(--color-bg-light);
+  border-radius: var(--radius-md);
 }
 
 .controlGroup legend {
-  width: 100%;
-  font-weight: 600;
-  font-size: var(--text-sm);
-  color: var(--color-text-dark);
   display: none;
 }

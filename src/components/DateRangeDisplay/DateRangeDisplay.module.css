@@ -1,35 +1,35 @@
 .inputLine {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
   padding: var(--space-sm) var(--space-md);
+  width: 100%;
+  min-height: 2.5rem;
   background: var(--color-bg-white);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.2s ease;
-  min-height: 40px;
-  width: 100%;
-  gap: var(--space-md);
   position: relative;
+  transition: all 0.2s ease;
 }
 
 .inputLine:hover {
   border-color: var(--color-border-dark);
-  box-shadow: 0 0 0 1px var(--color-border-medium);
-}
-
-.calendarIcon {
-  color: var(--color-primary);
-  font-size: var(--text-md);
-  flex-shrink: 0;
-  margin-right: var(--space-sm);
-  z-index: 2;
 }
 
 .timeRange {
   display: flex;
-  gap: var(--space-sm);
   align-items: center;
-  flex: 1;
   justify-content: center;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.calendarIcon {
+  flex-shrink: 0;
+  margin-right: var(--space-sm);
+  font-size: var(--text-md);
+  color: var(--color-primary);
+  z-index: 2;
 }

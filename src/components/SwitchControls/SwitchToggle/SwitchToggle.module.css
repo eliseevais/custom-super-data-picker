@@ -6,9 +6,18 @@
   white-space: nowrap;
 }
 
+.switchLabel {
+  font-size: calc(var(--text-sm) * 0.85);
+  color: var(--color-text-dark);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 .switch {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 2rem;
   height: 1.1rem;
 }
@@ -17,13 +26,6 @@
   opacity: 0;
   width: 0;
   height: 0;
-}
-
-.switchLabel {
-  font-size: calc(var(--text-sm) * 0.85);
-  color: var(--color-text-dark);
-  font-weight: 500;
-  white-space: nowrap;
 }
 
 .slider {

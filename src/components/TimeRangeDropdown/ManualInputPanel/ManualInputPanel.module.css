@@ -12,10 +12,13 @@
 .inputWrapper {
   position: relative;
   width: 50%;
+  color: var(--color-text-dark);
 }
 
 .text {
   padding: var(--space-sm);
+  color: var(--color-text-dark);
+
 }
 
 .timeInputs {
@@ -41,6 +44,6 @@
   cursor: pointer;
   width: 16px;
   height: 16px;
-  fill: var(--color-text-medium);
+  fill: var(--color-text-dark);
   user-select: none;
 }

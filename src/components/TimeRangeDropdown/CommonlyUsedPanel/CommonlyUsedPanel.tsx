@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const CommonlyUsedPanel = ({ items, onCommonlyUsed }: Props) => (
-  <div className={s.quickSelect}>
+  <div className={s.commonlyUsed}>
     <h4 className={s.sectionTitle}>Commonly used</h4>
     <div className={s.commonlyUsedGrid}>
       {items.map((item, i) => (
