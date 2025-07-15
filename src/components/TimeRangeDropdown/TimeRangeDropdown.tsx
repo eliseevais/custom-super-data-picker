@@ -1,42 +1,45 @@
 import s from "./TimeRangeDropdown.module.css";
-import { QuickSelectPanel } from "./QuickSelectPanel/QuickSelectPanel.tsx";
+import { CommonlyUsedPanel } from "./CommonlyUsedPanel/CommonlyUsedPanel.tsx";
 import { RecentlyUsedPanel } from "./RecentlyUsedPanel/RecentlyUsedPanel.tsx";
 import { ManualInputPanel } from "./ManualInputPanel/ManualInputPanel.tsx";
 import type { TimeRange } from "../../types/types.ts";
 
 type Props = {
-  quickSelectItems: { display: string; timeRange: TimeRange }[];
+  commonlyUsedItems: { display: string; timeRange: TimeRange }[];
   recentlyUsed: TimeRange[];
   localStart: string;
   localEnd: string;
   isInvalid: boolean;
-  onQuickSelect: (range: TimeRange) => void;
+  onCommonlyUsed: (range: TimeRange) => void;
   onDateTimeChange: (value: string, type: "start" | "end") => void;
-  showQuickSelect: boolean;
+  showCommonlyUsed: boolean;
   showRecentlyUsed: boolean;
   showManualInput: boolean;
 };
 
 export const TimeRangeDropdown = ({
-  quickSelectItems,
+  commonlyUsedItems,
   recentlyUsed,
   localStart,
   localEnd,
   isInvalid,
-  onQuickSelect,
+  onCommonlyUsed,
   onDateTimeChange,
-  showQuickSelect,
+  showCommonlyUsed,
   showRecentlyUsed,
   showManualInput,
 }: Props) => {
   return (
     <div className={s.dropdown}>
-      {showQuickSelect && (
-        <QuickSelectPanel items={quickSelectItems} onSelect={onQuickSelect} />
+      {showCommonlyUsed && (
+        <CommonlyUsedPanel
+          items={commonlyUsedItems}
+          onCommonlyUsed={onCommonlyUsed}
+        />
       )}
 
       {showRecentlyUsed && recentlyUsed.length > 0 && (
-        <RecentlyUsedPanel items={recentlyUsed} onSelect={onQuickSelect} />
+        <RecentlyUsedPanel items={recentlyUsed} onSelect={onCommonlyUsed} />
       )}
 
       {showManualInput && (

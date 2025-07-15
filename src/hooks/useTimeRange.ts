@@ -21,11 +21,11 @@ export const useTimeRange = (initial: TimeRange) => {
       const updated = exists
         ? [newRange, ...prev.filter((r) => r !== exists)]
         : [newRange, ...prev];
-      return updated.slice(0, 6);
+      return updated.slice(0, 4);
     });
   };
 
-  const handleQuickSelect = (range: TimeRange) => {
+  const handleCommonlyUsed = (range: TimeRange) => {
     if (validateTimeRange(range.start, range.end)) {
       handleTimeChange(range);
       setLocalStart(range.start);
@@ -61,7 +61,7 @@ export const useTimeRange = (initial: TimeRange) => {
     localStart,
     localEnd,
     isInvalid,
-    handleQuickSelect,
+    handleCommonlyUsed,
     handleApply,
     handleDateTimeChange,
   };

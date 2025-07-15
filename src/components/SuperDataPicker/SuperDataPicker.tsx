@@ -10,7 +10,7 @@ import s from "./SuperDataPicker.module.css";
 
 export const SuperDataPicker = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showQuickSelect, setShowQuickSelect] = useState(true);
+  const [showCommonlyUsed, setShowCommonlyUsed] = useState(true);
   const [showRecentlyUsed, setShowRecentlyUsed] = useState(true);
   const [showManualInput, setShowManualInput] = useState(true);
 
@@ -24,7 +24,7 @@ export const SuperDataPicker = () => {
     localStart,
     localEnd,
     isInvalid,
-    handleQuickSelect,
+    handleCommonlyUsed,
     handleApply,
     handleDateTimeChange,
   } = useTimeRange({ start: "now-1h", end: "now" });
@@ -36,8 +36,8 @@ export const SuperDataPicker = () => {
       <h1>Super Data Picker</h1>
 
       <SwitchControls
-        showQuickSelect={showQuickSelect}
-        setShowQuickSelect={setShowQuickSelect}
+        showCommonlyUsed={showCommonlyUsed}
+        setShowCommonlyUsed={setShowCommonlyUsed}
         showRecentlyUsed={showRecentlyUsed}
         setShowRecentlyUsed={setShowRecentlyUsed}
         showManualInput={showManualInput}
@@ -69,14 +69,14 @@ export const SuperDataPicker = () => {
 
       {isOpen && (
         <TimeRangeDropdown
-          quickSelectItems={constants}
+          commonlyUsedItems={constants}
           recentlyUsed={recentlyUsed}
           localStart={localStart}
           localEnd={localEnd}
           isInvalid={isInvalid}
-          onQuickSelect={handleQuickSelect}
+          onCommonlyUsed={handleCommonlyUsed}
           onDateTimeChange={handleDateTimeChange}
-          showQuickSelect={showQuickSelect}
+          showCommonlyUsed={showCommonlyUsed}
           showRecentlyUsed={showRecentlyUsed}
           showManualInput={showManualInput}
         />

@@ -1,11 +1,11 @@
-.quickSelectGrid {
+.commonlyUsedGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: var(--space-sm);
   margin-bottom: var(--space-sm);
 }
 
-.quickSelectItem {
+.commonlyUsedItem {
   width: 100%;
   padding: var(--space-sm);
   border: 1px solid var(--color-border-light);
@@ -20,7 +20,7 @@
   text-align: left;
 }
 
-.quickSelectItem:hover {
+.commonlyUsedItem:hover {
   background: var(--color-bg-white);
   border-color: var(--color-border-medium);
 }

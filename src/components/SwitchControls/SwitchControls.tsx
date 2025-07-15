@@ -2,10 +2,10 @@ import s from "./SwitchControls.module.css";
 import { SwitchToggle } from "./SwitchToggle/SwitchToggle";
 
 type Props = {
-  showQuickSelect: boolean;
+  showCommonlyUsed: boolean;
   showRecentlyUsed: boolean;
   showManualInput: boolean;
-  setShowQuickSelect: (value: boolean) => void;
+  setShowCommonlyUsed: (value: boolean) => void;
   setShowRecentlyUsed: (value: boolean) => void;
   setShowManualInput: (value: boolean) => void;
 
@@ -18,10 +18,10 @@ type Props = {
 };
 
 export const SwitchControls = ({
-  showQuickSelect,
+  showCommonlyUsed,
   showRecentlyUsed,
   showManualInput,
-  setShowQuickSelect,
+  setShowCommonlyUsed,
   setShowRecentlyUsed,
   setShowManualInput,
 
@@ -37,9 +37,9 @@ export const SwitchControls = ({
       <fieldset className={s.controlGroup}>
         <legend>Time Settings</legend>
         <SwitchToggle
-          label="Quick Select"
-          checked={showQuickSelect}
-          onChange={() => setShowQuickSelect(!showQuickSelect)}
+          label="Commonly used"
+          checked={showCommonlyUsed}
+          onChange={() => setShowCommonlyUsed(!showCommonlyUsed)}
         />
         <SwitchToggle
           label="Recently Used"
