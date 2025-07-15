@@ -42,12 +42,12 @@ export const SwitchControls = ({
           onChange={() => setShowCommonlyUsed(!showCommonlyUsed)}
         />
         <SwitchToggle
-          label="Recently Used"
+          label="Recently used"
           checked={showRecentlyUsed}
           onChange={() => setShowRecentlyUsed(!showRecentlyUsed)}
         />
         <SwitchToggle
-          label="Manual Input"
+          label="Manual input"
           checked={showManualInput}
           onChange={() => setShowManualInput(!showManualInput)}
         />
@@ -56,17 +56,17 @@ export const SwitchControls = ({
       <fieldset className={s.controlGroup}>
         <legend>Refresh Button</legend>
         <SwitchToggle
-          label="Show Refresh Button"
+          label="Show refresh button"
           checked={showRefreshButton}
           onChange={() => setShowRefreshButton(!showRefreshButton)}
         />
         <SwitchToggle
-          label="Refresh Button Filled"
+          label="Refresh button filled"
           checked={refreshFilled}
           onChange={() => setRefreshFilled(!refreshFilled)}
         />
         <SwitchToggle
-          label="Refresh Icon Only"
+          label="Refresh icon only"
           checked={refreshIconOnly}
           onChange={() => setRefreshIconOnly(!refreshIconOnly)}
         />
