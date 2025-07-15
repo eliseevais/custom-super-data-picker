@@ -1,5 +1,5 @@
 import s from "./SwitchControls.module.css";
-import { SwitchToggle } from "./SwitchToggle/SwitchToggle.tsx";
+import { SwitchToggle } from "./SwitchToggle/SwitchToggle";
 
 type Props = {
   showQuickSelect: boolean;
@@ -34,37 +34,43 @@ export const SwitchControls = ({
 }: Props) => {
   return (
     <div className={s.switchControls}>
-      <SwitchToggle
-        label="Quick Select"
-        checked={showQuickSelect}
-        onChange={() => setShowQuickSelect(!showQuickSelect)}
-      />
-      <SwitchToggle
-        label="Recently Used"
-        checked={showRecentlyUsed}
-        onChange={() => setShowRecentlyUsed(!showRecentlyUsed)}
-      />
-      <SwitchToggle
-        label="Manual Input"
-        checked={showManualInput}
-        onChange={() => setShowManualInput(!showManualInput)}
-      />
+      <fieldset className={s.controlGroup}>
+        <legend>Time Settings</legend>
+        <SwitchToggle
+          label="Quick Select"
+          checked={showQuickSelect}
+          onChange={() => setShowQuickSelect(!showQuickSelect)}
+        />
+        <SwitchToggle
+          label="Recently Used"
+          checked={showRecentlyUsed}
+          onChange={() => setShowRecentlyUsed(!showRecentlyUsed)}
+        />
+        <SwitchToggle
+          label="Manual Input"
+          checked={showManualInput}
+          onChange={() => setShowManualInput(!showManualInput)}
+        />
+      </fieldset>
 
-      <SwitchToggle
-        label="Show Refresh Button"
-        checked={showRefreshButton}
-        onChange={() => setShowRefreshButton(!showRefreshButton)}
-      />
-      <SwitchToggle
-        label="Refresh Button Filled"
-        checked={refreshFilled}
-        onChange={() => setRefreshFilled(!refreshFilled)}
-      />
-      <SwitchToggle
-        label="Refresh Icon Only"
-        checked={refreshIconOnly}
-        onChange={() => setRefreshIconOnly(!refreshIconOnly)}
-      />
+      <fieldset className={s.controlGroup}>
+        <legend>Refresh Button</legend>
+        <SwitchToggle
+          label="Show Refresh Button"
+          checked={showRefreshButton}
+          onChange={() => setShowRefreshButton(!showRefreshButton)}
+        />
+        <SwitchToggle
+          label="Refresh Button Filled"
+          checked={refreshFilled}
+          onChange={() => setRefreshFilled(!refreshFilled)}
+        />
+        <SwitchToggle
+          label="Refresh Icon Only"
+          checked={refreshIconOnly}
+          onChange={() => setRefreshIconOnly(!refreshIconOnly)}
+        />
+      </fieldset>
     </div>
   );
 };
