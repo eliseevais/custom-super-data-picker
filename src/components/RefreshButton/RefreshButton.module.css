@@ -1,6 +1,10 @@
 .refreshButton {
-  padding: 0 var(--space-lg);
-  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: var(--space-sm);
+  min-width: 7rem;
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--color-text-light);
@@ -15,4 +19,15 @@
   background: var(--color-bg-light);
   color: var(--color-text-dark);
   border: 1px solid var(--color-border-dark);
+}
+
+.icon {
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-light);
+}
+
+.refreshButton:hover .icon {
+  color: var(--color-text-dark);
 }
