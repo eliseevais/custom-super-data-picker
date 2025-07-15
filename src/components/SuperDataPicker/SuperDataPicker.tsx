@@ -14,6 +14,10 @@ export const SuperDataPicker = () => {
   const [showRecentlyUsed, setShowRecentlyUsed] = useState(true);
   const [showManualInput, setShowManualInput] = useState(true);
 
+  const [showRefreshButton, setShowRefreshButton] = useState(true);
+  const [refreshFilled, setRefreshFilled] = useState(true);
+  const [refreshIconOnly, setRefreshIconOnly] = useState(false);
+
   const {
     timeRange,
     recentlyUsed,
@@ -38,6 +42,12 @@ export const SuperDataPicker = () => {
         setShowRecentlyUsed={setShowRecentlyUsed}
         showManualInput={showManualInput}
         setShowManualInput={setShowManualInput}
+        showRefreshButton={showRefreshButton}
+        setShowRefreshButton={setShowRefreshButton}
+        refreshFilled={refreshFilled}
+        setRefreshFilled={setRefreshFilled}
+        refreshIconOnly={refreshIconOnly}
+        setRefreshIconOnly={setRefreshIconOnly}
       />
 
       <div className={s.inputLineAndRefreshButton}>
@@ -47,10 +57,14 @@ export const SuperDataPicker = () => {
           onClick={() => setIsOpen(!isOpen)}
         />
 
-        <RefreshButton
-          disabled={isInvalid}
-          onClick={() => !isInvalid && handleApply(closeDropdown)}
-        />
+        {showRefreshButton && (
+          <RefreshButton
+            disabled={isInvalid}
+            onClick={() => !isInvalid && handleApply(closeDropdown)}
+            filled={refreshFilled}
+            iconOnly={refreshIconOnly}
+          />
+        )}
       </div>
 
       {isOpen && (

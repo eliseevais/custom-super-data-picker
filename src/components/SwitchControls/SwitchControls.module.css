@@ -1,9 +1,10 @@
 .switchControls {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   gap: var(--space-lg);
   width: 100%;
+  max-width: 40rem;
   padding: var(--space-sm);
   background: var(--color-bg-light);
   border-radius: var(--radius-md);

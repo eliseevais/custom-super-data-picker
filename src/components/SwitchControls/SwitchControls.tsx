@@ -8,6 +8,13 @@ type Props = {
   setShowQuickSelect: (value: boolean) => void;
   setShowRecentlyUsed: (value: boolean) => void;
   setShowManualInput: (value: boolean) => void;
+
+  showRefreshButton: boolean;
+  setShowRefreshButton: (value: boolean) => void;
+  refreshFilled: boolean;
+  setRefreshFilled: (value: boolean) => void;
+  refreshIconOnly: boolean;
+  setRefreshIconOnly: (value: boolean) => void;
 };
 
 export const SwitchControls = ({
@@ -17,6 +24,13 @@ export const SwitchControls = ({
   setShowQuickSelect,
   setShowRecentlyUsed,
   setShowManualInput,
+
+  showRefreshButton,
+  setShowRefreshButton,
+  refreshFilled,
+  setRefreshFilled,
+  refreshIconOnly,
+  setRefreshIconOnly,
 }: Props) => {
   return (
     <div className={s.switchControls}>
@@ -34,6 +48,22 @@ export const SwitchControls = ({
         label="Manual Input"
         checked={showManualInput}
         onChange={() => setShowManualInput(!showManualInput)}
+      />
+
+      <SwitchToggle
+        label="Show Refresh Button"
+        checked={showRefreshButton}
+        onChange={() => setShowRefreshButton(!showRefreshButton)}
+      />
+      <SwitchToggle
+        label="Refresh Button Filled"
+        checked={refreshFilled}
+        onChange={() => setRefreshFilled(!refreshFilled)}
+      />
+      <SwitchToggle
+        label="Refresh Icon Only"
+        checked={refreshIconOnly}
+        onChange={() => setRefreshIconOnly(!refreshIconOnly)}
       />
     </div>
   );

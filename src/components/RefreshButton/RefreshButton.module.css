@@ -7,9 +7,9 @@
   min-width: 7rem;
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--color-text-light);
-  background: var(--color-primary);
-  border: none;
+  color: var(--color-text-dark);
+  background: transparent;
+  border: 1px solid var(--color-border-dark);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -21,13 +21,28 @@
   border: 1px solid var(--color-border-dark);
 }
 
+.filled {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.filled:hover {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
 .icon {
   font-size: 1.1em;
   display: flex;
   align-items: center;
-  color: var(--color-text-light);
+  transition: color 0.2s ease;
 }
 
 .refreshButton:hover .icon {
   color: var(--color-text-dark);
+}
+
+.iconOnly {
+  min-width: auto;
+  padding: 0.5rem;
 }
