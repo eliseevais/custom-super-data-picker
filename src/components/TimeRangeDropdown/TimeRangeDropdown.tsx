@@ -17,6 +17,7 @@ type Props = {
   showRecentlyUsed: boolean;
   showManualInput: boolean;
   showCustomContent?: boolean;
+  compactInputs?: boolean;
 };
 
 export const TimeRangeDropdown = ({
@@ -31,9 +32,10 @@ export const TimeRangeDropdown = ({
   showRecentlyUsed,
   showManualInput,
   showCustomContent,
+  compactInputs,
 }: Props) => {
   return (
-    <div className={s.dropdown}>
+    <div className={`${s.dropdown} ${compactInputs ? s.compact : ""}`}>
       {showCustomContent && <CustomContent />}
 
       {showCommonlyUsed && (

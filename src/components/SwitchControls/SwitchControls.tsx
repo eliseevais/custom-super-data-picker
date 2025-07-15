@@ -18,6 +18,9 @@ type Props = {
   setRefreshFilled: (value: boolean) => void;
   refreshIconOnly: boolean;
   setRefreshIconOnly: (value: boolean) => void;
+
+  compactInputs: boolean;
+  setCompactInputs: (value: boolean) => void;
 };
 
 export const SwitchControls = ({
@@ -37,6 +40,9 @@ export const SwitchControls = ({
   setRefreshFilled,
   refreshIconOnly,
   setRefreshIconOnly,
+
+  compactInputs,
+  setCompactInputs,
 }: Props) => {
   return (
     <div className={s.switchControls}>
@@ -80,6 +86,15 @@ export const SwitchControls = ({
           label="Refresh icon only"
           checked={refreshIconOnly}
           onChange={() => setRefreshIconOnly(!refreshIconOnly)}
+        />
+      </fieldset>
+
+      <fieldset className={s.controlGroup}>
+        <legend>Display</legend>
+        <SwitchToggle
+          label="Compact inputs"
+          checked={compactInputs}
+          onChange={() => setCompactInputs(!compactInputs)}
         />
       </fieldset>
     </div>

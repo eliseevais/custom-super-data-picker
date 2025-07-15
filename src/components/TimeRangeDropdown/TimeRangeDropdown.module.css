@@ -12,4 +12,40 @@
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
+  box-sizing: border-box;
+}
+
+.dropdown.compact {
+  padding: 0.5rem;
+  min-width: 20rem;
+}
+
+.dropdown.compact input,
+.dropdown.compact div,
+.dropdown.compact button,
+.dropdown.compact textarea {
+  padding: 0 0.5rem;
+  margin: 0;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+}
+
+.dropdown.compact textarea {
+  max-height: 1.5rem;
+  resize: none;
+}
+
+.dropdown.compact h4 {
+  margin: var(--space-sm) 0;
+  padding: 0;
+}
+
+.dropdown.compact svg {
+  padding: 0;
+  margin: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  flex-shrink: 0;
+  transform: translateY(-15%);
+  vertical-align: middle;
 }

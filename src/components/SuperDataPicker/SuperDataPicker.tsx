@@ -21,6 +21,8 @@ export const SuperDataPicker = () => {
   const [refreshFilled, setRefreshFilled] = useState(true);
   const [refreshIconOnly, setRefreshIconOnly] = useState(false);
 
+  const [compactInputs, setCompactInputs] = useState(false);
+
   const {
     timeRange,
     recentlyUsed,
@@ -53,6 +55,8 @@ export const SuperDataPicker = () => {
         setRefreshFilled={setRefreshFilled}
         refreshIconOnly={refreshIconOnly}
         setRefreshIconOnly={setRefreshIconOnly}
+        compactInputs={compactInputs}
+        setCompactInputs={setCompactInputs}
       />
 
       <div className={s.inputLineAndRefreshButton}>
@@ -85,6 +89,7 @@ export const SuperDataPicker = () => {
           showRecentlyUsed={showRecentlyUsed}
           showManualInput={showManualInput}
           showCustomContent={showCustomContent}
+          compactInputs={compactInputs}
         />
       )}
     </div>
