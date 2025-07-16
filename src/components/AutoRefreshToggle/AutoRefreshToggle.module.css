@@ -1,0 +1,54 @@
+.controlGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 10rem;
+  white-space: nowrap;
+  border: none;
+}
+
+legend {
+  display: none;
+}
+
+.intervalWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  white-space: nowrap;
+}
+
+.intervalLabel {
+  font-size: calc(var(--text-sm) * 0.85);
+  color: var(--color-text-dark);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.inputInterval {
+  padding: 0.2rem 0.6rem;
+  font-size: calc(var(--text-sm) * 0.85);
+  border: 1px solid var(--color-border-light);
+  border-radius: 1.1rem;
+  background-color: var(--color-bg-white);
+  color: var(--color-text-dark);
+  cursor: pointer;
+  transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  width: 5rem;
+  appearance: none;
+  outline-offset: 1px;
+}
+
+.inputInterval:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  outline: none;
+}
+
+.inputInterval:disabled {
+  background-color: var(--color-disabled);
+  cursor: not-allowed;
+  color: var(--color-text-light);
+}

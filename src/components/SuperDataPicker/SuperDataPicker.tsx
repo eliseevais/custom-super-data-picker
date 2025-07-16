@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { formatDisplayDate } from "../../utils/dateUtils";
 import { constants } from "../../constants/constants";
 import { useTimeRange } from "../../hooks/useTimeRange";
@@ -26,6 +26,10 @@ export const SuperDataPicker = () => {
   const [inputLineWidthMode, setInputLineWidthMode] =
     useState<WidthMode>("full");
 
+  // Новые стейты автообновления
+  const [isAutoRefreshOn, setIsAutoRefreshOn] = useState(false);
+  const [refreshInterval, setRefreshInterval] = useState(5000);
+
   const {
     timeRange,
     recentlyUsed,
@@ -36,6 +40,25 @@ export const SuperDataPicker = () => {
     handleApply,
     handleDateTimeChange,
   } = useTimeRange({ start: "now-1h", end: "now" });
+
+  const refreshRef = useRef(handleApply);
+  useEffect(() => {
+    refreshRef.current = handleApply;
+  }, [handleApply]);
+
+  useEffect(() => {
+    if (!isAutoRefreshOn || refreshInterval <= 0) {
+      return;
+    }
+
+    const id = setInterval(() => {
+      if (!isInvalid) {
+        refreshRef.current(() => setIsOpen(false));
+      }
+    }, refreshInterval);
+
+    return () => clearInterval(id);
+  }, [isAutoRefreshOn, refreshInterval, isInvalid]);
 
   const closeDropdown = () => setIsOpen(false);
 
@@ -62,6 +85,10 @@ export const SuperDataPicker = () => {
         setCompactInputs={setCompactInputs}
         inputLineWidthMode={inputLineWidthMode}
         setInputLineWidthMode={setInputLineWidthMode}
+        isAutoRefreshOn={isAutoRefreshOn}
+        setIsAutoRefreshOn={setIsAutoRefreshOn}
+        refreshInterval={refreshInterval}
+        setRefreshInterval={setRefreshInterval}
       />
 
       <div className={s.inputLineAndRefreshButton}>

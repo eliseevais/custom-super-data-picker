@@ -1,5 +1,6 @@
 import { SwitchToggle } from "./SwitchToggle/SwitchToggle";
 import { WidthSelector } from "../WidthSelector/WidthSelector.tsx";
+import { AutoRefreshToggle } from "../AutoRefreshToggle/AutoRefreshToggle.tsx";
 import type { WidthMode } from "../../types/types.ts";
 import s from "./SwitchControls.module.css";
 
@@ -26,6 +27,11 @@ type Props = {
 
   inputLineWidthMode: WidthMode;
   setInputLineWidthMode: (value: WidthMode) => void;
+
+  isAutoRefreshOn: boolean;
+  setIsAutoRefreshOn: (value: boolean) => void;
+  refreshInterval: number;
+  setRefreshInterval: (value: number) => void;
 };
 
 export const SwitchControls = ({
@@ -51,6 +57,11 @@ export const SwitchControls = ({
 
   inputLineWidthMode,
   setInputLineWidthMode,
+
+  isAutoRefreshOn,
+  setIsAutoRefreshOn,
+  refreshInterval,
+  setRefreshInterval,
 }: Props) => {
   return (
     <div className={s.switchControls}>
@@ -110,6 +121,13 @@ export const SwitchControls = ({
           onChange={setInputLineWidthMode}
         />
       </fieldset>
+
+      <AutoRefreshToggle
+        isAutoRefreshOn={isAutoRefreshOn}
+        setIsAutoRefreshOn={setIsAutoRefreshOn}
+        refreshInterval={refreshInterval}
+        setRefreshInterval={setRefreshInterval}
+      />
     </div>
   );
 };
