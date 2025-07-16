@@ -1,26 +1,31 @@
 import { SwitchToggle } from "../switchToggle";
 import { WidthSelector } from "../widthSelector";
-import type { WidthMode } from "../../../types/types.ts";
-import s from "../switchControls.module.css";
+import type { WidthMode } from "../../../types/types";
+import s from "./displaySettings.module.css";
 
 type Props = {
   compactInputs: boolean;
+  setCompactInputs: (val: boolean) => void;
   inputLineWidthMode: WidthMode;
-  setCompactInputs: (value: boolean) => void;
-  setInputLineWidthMode: (value: WidthMode) => void;
+  setInputLineWidthMode: (val: WidthMode) => void;
 };
 
-export const DisplaySettings = ({ settings }: { settings: Props }) => (
+export const DisplaySettings = ({
+  compactInputs,
+  setCompactInputs,
+  inputLineWidthMode,
+  setInputLineWidthMode,
+}: Props) => (
   <fieldset className={s.controlGroup}>
-    <legend>Display</legend>
+    <legend className={s.legend}>Display</legend>
     <SwitchToggle
       label="Compress"
-      checked={settings.compactInputs}
-      onChange={() => settings.setCompactInputs(!settings.compactInputs)}
+      checked={compactInputs}
+      onChange={() => setCompactInputs(!compactInputs)}
     />
     <WidthSelector
-      value={settings.inputLineWidthMode}
-      onChange={settings.setInputLineWidthMode}
+      value={inputLineWidthMode}
+      onChange={setInputLineWidthMode}
     />
   </fieldset>
 );

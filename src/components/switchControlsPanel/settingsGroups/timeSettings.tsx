@@ -1,41 +1,48 @@
-import s from "../switchControls.module.css";
 import { SwitchToggle } from "../switchToggle";
+import s from "./timeSettings.module.css";
 
 type Props = {
   showCommonlyUsed: boolean;
   showRecentlyUsed: boolean;
   showManualInput: boolean;
   showCustomContent: boolean;
-  setShowCommonlyUsed: (value: boolean) => void;
-  setShowRecentlyUsed: (value: boolean) => void;
-  setShowManualInput: (value: boolean) => void;
-  setShowCustomContent: (value: boolean) => void;
+  setShowCommonlyUsed: (val: boolean) => void;
+  setShowRecentlyUsed: (val: boolean) => void;
+  setShowManualInput: (val: boolean) => void;
+  setShowCustomContent: (val: boolean) => void;
 };
 
-export const TimeSettings = ({ settings }: { settings: Props }) => (
+export const TimeSettings = ({
+  showCommonlyUsed,
+  showRecentlyUsed,
+  showManualInput,
+  showCustomContent,
+  setShowCommonlyUsed,
+  setShowRecentlyUsed,
+  setShowManualInput,
+  setShowCustomContent,
+}: Props) => (
   <fieldset className={s.controlGroup}>
-    <legend>Time Settings</legend>
+    <legend className={s.legend}>Time Settings</legend>
     <SwitchToggle
       label="Commonly used"
-      checked={settings.showCommonlyUsed}
-      onChange={() => settings.setShowCommonlyUsed(!settings.showCommonlyUsed)}
+      checked={showCommonlyUsed}
+      onChange={() => setShowCommonlyUsed(!showCommonlyUsed)}
     />
     <SwitchToggle
       label="Recently used"
-      checked={settings.showRecentlyUsed}
-      onChange={() => settings.setShowRecentlyUsed(!settings.showRecentlyUsed)}
+      checked={showRecentlyUsed}
+      onChange={() => setShowRecentlyUsed(!showRecentlyUsed)}
     />
     <SwitchToggle
       label="Manual input"
-      checked={settings.showManualInput}
-      onChange={() => settings.setShowManualInput(!settings.showManualInput)}
+      checked={showManualInput}
+      onChange={() => setShowManualInput(!showManualInput)}
     />
     <SwitchToggle
       label="Show custom content"
-      checked={settings.showCustomContent}
-      onChange={() =>
-        settings.setShowCustomContent(!settings.showCustomContent)
-      }
+      checked={showCustomContent}
+      onChange={() => setShowCustomContent(!showCustomContent)}
     />
   </fieldset>
 );

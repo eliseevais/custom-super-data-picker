@@ -1,32 +1,39 @@
 import { SwitchToggle } from "../switchToggle";
-import s from "../switchControls.module.css";
+import s from "./refreshButtonSettings.module.css";
 
 type Props = {
-  show: boolean;
-  filled: boolean;
-  iconOnly: boolean;
-  setShow: (value: boolean) => void;
-  setFilled: (value: boolean) => void;
-  setIconOnly: (value: boolean) => void;
+  showRefreshButton: boolean;
+  refreshFilled: boolean;
+  refreshIconOnly: boolean;
+  setShowRefreshButton: (val: boolean) => void;
+  setRefreshFilled: (val: boolean) => void;
+  setRefreshIconOnly: (val: boolean) => void;
 };
 
-export const RefreshButtonSettings = ({ settings }: { settings: Props }) => (
+export const RefreshButtonSettings = ({
+  showRefreshButton,
+  refreshFilled,
+  refreshIconOnly,
+  setShowRefreshButton,
+  setRefreshFilled,
+  setRefreshIconOnly,
+}: Props) => (
   <fieldset className={s.controlGroup}>
-    <legend>Refresh Button</legend>
+    <legend className={s.legend}>Refresh Button</legend>
     <SwitchToggle
       label="Show refresh button"
-      checked={settings.show}
-      onChange={() => settings.setShow(!settings.show)}
+      checked={showRefreshButton}
+      onChange={() => setShowRefreshButton(!showRefreshButton)}
     />
     <SwitchToggle
       label="Refresh button filled"
-      checked={settings.filled}
-      onChange={() => settings.setFilled(!settings.filled)}
+      checked={refreshFilled}
+      onChange={() => setRefreshFilled(!refreshFilled)}
     />
     <SwitchToggle
       label="Refresh icon only"
-      checked={settings.iconOnly}
-      onChange={() => settings.setIconOnly(!settings.iconOnly)}
+      checked={refreshIconOnly}
+      onChange={() => setRefreshIconOnly(!refreshIconOnly)}
     />
   </fieldset>
 );

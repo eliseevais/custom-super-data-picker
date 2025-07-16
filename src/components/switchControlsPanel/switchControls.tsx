@@ -1,17 +1,19 @@
-import { SwitchToggle } from "./switchToggle";
-import { WidthSelector } from "./widthSelector";
-import { AutoRefreshToggle } from "./autoRefreshToggle";
-import type { WidthMode } from "../../types/types.ts";
 import s from "./switchControls.module.css";
+import { AutoRefreshToggle } from "./autoRefreshToggle";
+import {
+  DisplaySettings,
+  RefreshButtonSettings,
+  TimeSettings,
+} from "./settingsGroups";
+import type { WidthMode } from "../../types/types.ts";
 
-type Props = {
+export type Props = {
   showCommonlyUsed: boolean;
-  showRecentlyUsed: boolean;
-  showManualInput: boolean;
   setShowCommonlyUsed: (value: boolean) => void;
+  showRecentlyUsed: boolean;
   setShowRecentlyUsed: (value: boolean) => void;
+  showManualInput: boolean;
   setShowManualInput: (value: boolean) => void;
-
   showCustomContent: boolean;
   setShowCustomContent: (value: boolean) => void;
 
@@ -24,7 +26,6 @@ type Props = {
 
   compactInputs: boolean;
   setCompactInputs: (value: boolean) => void;
-
   inputLineWidthMode: WidthMode;
   setInputLineWidthMode: (value: WidthMode) => void;
 
@@ -34,99 +35,41 @@ type Props = {
   setRefreshInterval: (value: number) => void;
 };
 
-export const SwitchControls = ({
-  showCommonlyUsed,
-  showRecentlyUsed,
-  showManualInput,
-  setShowCommonlyUsed,
-  setShowRecentlyUsed,
-  setShowManualInput,
-
-  showCustomContent,
-  setShowCustomContent,
-
-  showRefreshButton,
-  setShowRefreshButton,
-  refreshFilled,
-  setRefreshFilled,
-  refreshIconOnly,
-  setRefreshIconOnly,
-
-  compactInputs,
-  setCompactInputs,
-
-  inputLineWidthMode,
-  setInputLineWidthMode,
-
-  isAutoRefreshOn,
-  setIsAutoRefreshOn,
-  refreshInterval,
-  setRefreshInterval,
-}: Props) => {
+export const SwitchControls = (props: Props) => {
   return (
     <div className={s.switchControls}>
-      <fieldset className={s.controlGroup}>
-        <legend>Time Settings</legend>
-        <SwitchToggle
-          label="Commonly used"
-          checked={showCommonlyUsed}
-          onChange={() => setShowCommonlyUsed(!showCommonlyUsed)}
-        />
-        <SwitchToggle
-          label="Recently used"
-          checked={showRecentlyUsed}
-          onChange={() => setShowRecentlyUsed(!showRecentlyUsed)}
-        />
-        <SwitchToggle
-          label="Manual input"
-          checked={showManualInput}
-          onChange={() => setShowManualInput(!showManualInput)}
-        />
-        <SwitchToggle
-          label="Show custom content"
-          checked={showCustomContent}
-          onChange={() => setShowCustomContent(!showCustomContent)}
-        />
-      </fieldset>
+      <TimeSettings
+        showCommonlyUsed={props.showCommonlyUsed}
+        showRecentlyUsed={props.showRecentlyUsed}
+        showManualInput={props.showManualInput}
+        showCustomContent={props.showCustomContent}
+        setShowCommonlyUsed={props.setShowCommonlyUsed}
+        setShowRecentlyUsed={props.setShowRecentlyUsed}
+        setShowManualInput={props.setShowManualInput}
+        setShowCustomContent={props.setShowCustomContent}
+      />
 
-      <fieldset className={s.controlGroup}>
-        <legend>Refresh Button</legend>
-        <SwitchToggle
-          label="Show refresh button"
-          checked={showRefreshButton}
-          onChange={() => setShowRefreshButton(!showRefreshButton)}
-        />
-        <SwitchToggle
-          label="Refresh button filled"
-          checked={refreshFilled}
-          onChange={() => setRefreshFilled(!refreshFilled)}
-        />
-        <SwitchToggle
-          label="Refresh icon only"
-          checked={refreshIconOnly}
-          onChange={() => setRefreshIconOnly(!refreshIconOnly)}
-        />
-      </fieldset>
+      <RefreshButtonSettings
+        showRefreshButton={props.showRefreshButton}
+        refreshFilled={props.refreshFilled}
+        refreshIconOnly={props.refreshIconOnly}
+        setShowRefreshButton={props.setShowRefreshButton}
+        setRefreshFilled={props.setRefreshFilled}
+        setRefreshIconOnly={props.setRefreshIconOnly}
+      />
 
-      <fieldset className={s.controlGroup}>
-        <legend>Display</legend>
-        <SwitchToggle
-          label="Compress"
-          checked={compactInputs}
-          onChange={() => setCompactInputs(!compactInputs)}
-        />
-
-        <WidthSelector
-          value={inputLineWidthMode}
-          onChange={setInputLineWidthMode}
-        />
-      </fieldset>
+      <DisplaySettings
+        compactInputs={props.compactInputs}
+        setCompactInputs={props.setCompactInputs}
+        inputLineWidthMode={props.inputLineWidthMode}
+        setInputLineWidthMode={props.setInputLineWidthMode}
+      />
 
       <AutoRefreshToggle
-        isAutoRefreshOn={isAutoRefreshOn}
-        setIsAutoRefreshOn={setIsAutoRefreshOn}
-        refreshInterval={refreshInterval}
-        setRefreshInterval={setRefreshInterval}
+        isAutoRefreshOn={props.isAutoRefreshOn}
+        setIsAutoRefreshOn={props.setIsAutoRefreshOn}
+        refreshInterval={props.refreshInterval}
+        setRefreshInterval={props.setRefreshInterval}
       />
     </div>
   );

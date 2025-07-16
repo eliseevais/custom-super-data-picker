@@ -1,0 +1,13 @@
+.controlGroup {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+.legend {
+  display: none;
+}
