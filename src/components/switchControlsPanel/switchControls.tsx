@@ -1,4 +1,3 @@
-import s from "./switchControls.module.css";
 import { AutoRefreshToggle } from "./autoRefreshToggle";
 import {
   DisplaySettings,
@@ -6,6 +5,7 @@ import {
   TimeSettings,
 } from "./settingsGroups";
 import type { WidthMode } from "../../types/types.ts";
+import s from "./switchControls.module.css";
 
 export type Props = {
   timeSettings: {
@@ -44,40 +44,73 @@ export type Props = {
 };
 
 export const SwitchControls = (props: Props) => {
+  const {
+    timeSettings: {
+      showCommonlyUsed,
+      setShowCommonlyUsed,
+      showRecentlyUsed,
+      setShowRecentlyUsed,
+      showManualInput,
+      setShowManualInput,
+      showCustomContent,
+      setShowCustomContent,
+    },
+    refreshSettings: {
+      showRefreshButton,
+      setShowRefreshButton,
+      refreshFilled,
+      setRefreshFilled,
+      refreshIconOnly,
+      setRefreshIconOnly,
+    },
+    displaySettings: {
+      compactInputs,
+      setCompactInputs,
+      inputLineWidthMode,
+      setInputLineWidthMode,
+    },
+    autoRefreshSettings: {
+      isAutoRefreshOn,
+      setIsAutoRefreshOn,
+      refreshInterval,
+      setRefreshInterval,
+    },
+  } = props;
+
   return (
     <div className={s.switchControls}>
       <TimeSettings
-        showCommonlyUsed={props.timeSettings.showCommonlyUsed}
-        setShowCommonlyUsed={props.timeSettings.setShowCommonlyUsed}
-        showRecentlyUsed={props.timeSettings.showRecentlyUsed}
-        setShowRecentlyUsed={props.timeSettings.setShowRecentlyUsed}
-        showManualInput={props.timeSettings.showManualInput}
-        setShowManualInput={props.timeSettings.setShowManualInput}
-        showCustomContent={props.timeSettings.showCustomContent}
-        setShowCustomContent={props.timeSettings.setShowCustomContent}
+        showCommonlyUsed={showCommonlyUsed}
+        setShowCommonlyUsed={setShowCommonlyUsed}
+        showRecentlyUsed={showRecentlyUsed}
+        setShowRecentlyUsed={setShowRecentlyUsed}
+        showManualInput={showManualInput}
+        setShowManualInput={setShowManualInput}
+        showCustomContent={showCustomContent}
+        setShowCustomContent={setShowCustomContent}
       />
 
       <RefreshButtonSettings
-        showRefreshButton={props.refreshSettings.showRefreshButton}
-        setShowRefreshButton={props.refreshSettings.setShowRefreshButton}
-        refreshFilled={props.refreshSettings.refreshFilled}
-        setRefreshFilled={props.refreshSettings.setRefreshFilled}
-        refreshIconOnly={props.refreshSettings.refreshIconOnly}
-        setRefreshIconOnly={props.refreshSettings.setRefreshIconOnly}
+        showRefreshButton={showRefreshButton}
+        setShowRefreshButton={setShowRefreshButton}
+        refreshFilled={refreshFilled}
+        setRefreshFilled={setRefreshFilled}
+        refreshIconOnly={refreshIconOnly}
+        setRefreshIconOnly={setRefreshIconOnly}
       />
 
       <DisplaySettings
-        compactInputs={props.displaySettings.compactInputs}
-        setCompactInputs={props.displaySettings.setCompactInputs}
-        inputLineWidthMode={props.displaySettings.inputLineWidthMode}
-        setInputLineWidthMode={props.displaySettings.setInputLineWidthMode}
+        compactInputs={compactInputs}
+        setCompactInputs={setCompactInputs}
+        inputLineWidthMode={inputLineWidthMode}
+        setInputLineWidthMode={setInputLineWidthMode}
       />
 
       <AutoRefreshToggle
-        isAutoRefreshOn={props.autoRefreshSettings.isAutoRefreshOn}
-        setIsAutoRefreshOn={props.autoRefreshSettings.setIsAutoRefreshOn}
-        refreshInterval={props.autoRefreshSettings.refreshInterval}
-        setRefreshInterval={props.autoRefreshSettings.setRefreshInterval}
+        isAutoRefreshOn={isAutoRefreshOn}
+        setIsAutoRefreshOn={setIsAutoRefreshOn}
+        refreshInterval={refreshInterval}
+        setRefreshInterval={setRefreshInterval}
       />
     </div>
   );

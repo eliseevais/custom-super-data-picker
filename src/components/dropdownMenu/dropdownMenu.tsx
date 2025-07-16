@@ -2,7 +2,7 @@ import { CommonlyUsed } from "./panels/commonlyUsed";
 import { CustomContent } from "./panels/customContent";
 import { ManualInput } from "./panels/manualInput";
 import { RecentlyUsed } from "./panels/recentlyUsed";
-import type { TimeRange } from "../../types/types.ts";
+import type { TimeRange, TimeType } from "../../types/types.ts";
 import s from "./dropdownMenu.module.css";
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
   localEnd: string;
   isInvalid: boolean;
   onCommonlyUsed: (range: TimeRange) => void;
-  onDateTimeChange: (value: string, type: "start" | "end") => void;
+  onDateTimeChange: (value: string, type: TimeType) => void;
   showCommonlyUsed: boolean;
   showRecentlyUsed: boolean;
   showManualInput: boolean;

@@ -1,11 +1,12 @@
 import { FaRegCalendarAlt } from "react-icons/fa";
+import type { WidthMode } from "../../types/types.ts";
 import s from "./dateRangeMainDisplay.module.css";
 
 type Props = {
   start: string;
   end: string;
   onClick: () => void;
-  widthMode?: "restricted" | "full" | "auto";
+  widthMode?: WidthMode;
   compact?: boolean;
 };
 
