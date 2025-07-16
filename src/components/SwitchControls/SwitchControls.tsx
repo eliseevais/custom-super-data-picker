@@ -100,7 +100,7 @@ export const SwitchControls = ({
       <fieldset className={s.controlGroup}>
         <legend>Display</legend>
         <SwitchToggle
-          label="Compact inputs"
+          label="Compress"
           checked={compactInputs}
           onChange={() => setCompactInputs(!compactInputs)}
         />

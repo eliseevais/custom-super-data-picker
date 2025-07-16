@@ -1,5 +1,5 @@
 import type { WidthMode } from "../../types/types.ts";
-import s from "./SwitchControls.module.css";
+import s from "./WidthSelector.module.css";
 
 type Props = {
   value: WidthMode;
