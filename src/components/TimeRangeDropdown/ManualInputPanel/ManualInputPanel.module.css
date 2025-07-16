@@ -16,9 +16,7 @@
 }
 
 .text {
-  padding: var(--space-sm);
   color: var(--color-text-dark);
-
 }
 
 .timeInputs {

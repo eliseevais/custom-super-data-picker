@@ -6,6 +6,7 @@ type Props = {
   end: string;
   isInvalid: boolean;
   onChange: (value: string, type: "start" | "end") => void;
+  compact?: boolean;
 };
 
 export const ManualInputPanel = ({
@@ -13,10 +14,11 @@ export const ManualInputPanel = ({
   end,
   isInvalid,
   onChange,
+  compact,
 }: Props) => {
   return (
-    <div className={s.absoluteTime}>
-      <h4 className={s.sectionTitle}>Specify manually</h4>
+    <div className={`${s.absoluteTime} ${compact ? s.compact : ""}`}>
+      <h4 className={s.sectionTitle}>Manual input</h4>
       <div className={s.timeInputs}>
         <DateTimeInput
           value={start}

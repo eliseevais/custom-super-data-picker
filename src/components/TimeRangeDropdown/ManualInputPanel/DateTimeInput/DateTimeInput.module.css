@@ -16,6 +16,7 @@
   background: var(--color-bg-light);
   transition: border-color 0.2s ease;
   appearance: none;
+  cursor: pointer;
 }
 
 .timeInput::-webkit-calendar-picker-indicator {
@@ -51,4 +52,9 @@
 
 .calendarIcon {
   font-size: var(--text-sm);
+}
+
+.compact {
+  font-size: 0.85rem;
+  padding: 1rem;
 }

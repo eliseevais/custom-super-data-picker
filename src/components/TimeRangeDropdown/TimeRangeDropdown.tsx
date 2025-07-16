@@ -55,6 +55,7 @@ export const TimeRangeDropdown = ({
           end={localEnd}
           isInvalid={isInvalid}
           onChange={onDateTimeChange}
+          compact={compactInputs}
         />
       )}
     </div>
