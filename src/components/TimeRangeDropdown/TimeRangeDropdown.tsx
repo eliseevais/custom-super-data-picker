@@ -1,8 +1,8 @@
 import { CommonlyUsedPanel } from "./CommonlyUsedPanel/CommonlyUsedPanel.tsx";
 import { RecentlyUsedPanel } from "./RecentlyUsedPanel/RecentlyUsedPanel.tsx";
 import { ManualInputPanel } from "./ManualInputPanel/ManualInputPanel.tsx";
-import type { TimeRange } from "../../types/types.ts";
 import { CustomContent } from "./CustomContent/CustomContent.tsx";
+import type { TimeRange } from "../../types/types.ts";
 import s from "./TimeRangeDropdown.module.css";
 
 type Props = {

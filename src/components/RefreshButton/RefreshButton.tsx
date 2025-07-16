@@ -7,6 +7,7 @@ type Props = {
   onClick: () => void;
   iconOnly?: boolean;
   filled?: boolean;
+  compact?: boolean;
 };
 
 export const RefreshButton = ({
@@ -14,12 +15,14 @@ export const RefreshButton = ({
   onClick,
   iconOnly = false,
   filled = false,
+  compact = false,
 }: Props) => (
   <button
     className={clsx(
       s.refreshButton,
       filled && s.filled,
       iconOnly && s.iconOnly,
+      compact && s.compact,
     )}
     onClick={onClick}
     disabled={disabled}

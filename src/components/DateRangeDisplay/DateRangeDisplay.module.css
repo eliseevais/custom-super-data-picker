@@ -18,6 +18,12 @@
   border-color: var(--color-border-dark);
 }
 
+.inputLine.compact {
+  padding: 0.25rem 0.5rem;
+  min-height: 1rem;
+  font-size: 0.85rem;
+}
+
 .timeRange {
   display: flex;
   align-items: center;

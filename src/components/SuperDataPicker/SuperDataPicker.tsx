@@ -6,6 +6,7 @@ import { TimeRangeDropdown } from "../TimeRangeDropdown/TimeRangeDropdown";
 import { SwitchControls } from "../SwitchControls/SwitchControls";
 import { DateRangeDisplay } from "../DateRangeDisplay/DateRangeDisplay";
 import { RefreshButton } from "../RefreshButton/RefreshButton";
+import type { WidthMode } from "../../types/types.ts";
 import s from "./SuperDataPicker.module.css";
 
 export const SuperDataPicker = () => {
@@ -22,9 +23,8 @@ export const SuperDataPicker = () => {
   const [refreshIconOnly, setRefreshIconOnly] = useState(false);
 
   const [compactInputs, setCompactInputs] = useState(false);
-  const [inputLineWidthMode, setInputLineWidthMode] = useState<
-    "restricted" | "full" | "auto"
-  >("full");
+  const [inputLineWidthMode, setInputLineWidthMode] =
+    useState<WidthMode>("full");
 
   const {
     timeRange,
@@ -69,6 +69,7 @@ export const SuperDataPicker = () => {
           start={formatDisplayDate(timeRange.start)}
           end={formatDisplayDate(timeRange.end)}
           onClick={() => setIsOpen(!isOpen)}
+          compact={compactInputs}
           widthMode={inputLineWidthMode}
         />
 
@@ -78,6 +79,7 @@ export const SuperDataPicker = () => {
             onClick={() => !isInvalid && handleApply(closeDropdown)}
             filled={refreshFilled}
             iconOnly={refreshIconOnly}
+            compact={compactInputs}
           />
         )}
       </div>

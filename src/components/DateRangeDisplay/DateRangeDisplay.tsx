@@ -6,9 +6,16 @@ type Props = {
   end: string;
   onClick: () => void;
   widthMode?: "restricted" | "full" | "auto";
+  compact?: boolean;
 };
 
-export const DateRangeDisplay = ({ start, end, onClick, widthMode }: Props) => (
+export const DateRangeDisplay = ({
+  start,
+  end,
+  onClick,
+  widthMode,
+  compact,
+}: Props) => (
   <div
     className={`${s.inputLine} ${
       widthMode === "restricted"
@@ -16,10 +23,9 @@ export const DateRangeDisplay = ({ start, end, onClick, widthMode }: Props) => (
         : widthMode === "auto"
           ? s.auto
           : s.full
-    }`}
+    } ${compact ? s.compact : ""}`}
     onClick={onClick}
   >
-    {" "}
     <div className={s.calendarIcon}>
       <FaRegCalendarAlt />
     </div>

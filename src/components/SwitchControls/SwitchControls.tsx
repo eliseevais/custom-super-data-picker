@@ -1,4 +1,6 @@
 import { SwitchToggle } from "./SwitchToggle/SwitchToggle";
+import { WidthSelector } from "../WidthSelector/WidthSelector.tsx";
+import type { WidthMode } from "../../types/types.ts";
 import s from "./SwitchControls.module.css";
 
 type Props = {
@@ -22,8 +24,8 @@ type Props = {
   compactInputs: boolean;
   setCompactInputs: (value: boolean) => void;
 
-  inputLineWidthMode: "restricted" | "full" | "auto";
-  setInputLineWidthMode: (value: "restricted" | "full" | "auto") => void;
+  inputLineWidthMode: WidthMode;
+  setInputLineWidthMode: (value: WidthMode) => void;
 };
 
 export const SwitchControls = ({
@@ -103,21 +105,10 @@ export const SwitchControls = ({
           onChange={() => setCompactInputs(!compactInputs)}
         />
 
-        <div className={s.selectWrapper}>
-          <span className={s.selectLabel}>Width: </span>
-          <select
-            value={inputLineWidthMode}
-            onChange={(e) =>
-              setInputLineWidthMode(
-                e.target.value as "restricted" | "full" | "auto",
-              )
-            }
-          >
-            <option value="restricted">Restricted (368px)</option>
-            <option value="full">Full Width (100%)</option>
-            <option value="auto">Auto Width</option>
-          </select>
-        </div>
+        <WidthSelector
+          value={inputLineWidthMode}
+          onChange={setInputLineWidthMode}
+        />
       </fieldset>
     </div>
   );

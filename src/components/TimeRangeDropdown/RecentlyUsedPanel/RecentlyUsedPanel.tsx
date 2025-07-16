@@ -1,6 +1,6 @@
-import s from "./RecentlyUsedPanel.module.css";
 import { formatDisplayDate } from "../../../utils/dateUtils.ts";
 import type { TimeRange } from "../../../types/types.ts";
+import s from "./RecentlyUsedPanel.module.css";
 
 type Props = {
   items: TimeRange[];

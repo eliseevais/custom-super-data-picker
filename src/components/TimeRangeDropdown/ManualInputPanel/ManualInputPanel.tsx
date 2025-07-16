@@ -1,11 +1,12 @@
-import s from "./ManualInputPanel.module.css";
 import { DateTimeInput } from "./DateTimeInput/DateTimeInput.tsx";
+import type { TimeType } from "../../../types/types.ts";
+import s from "./ManualInputPanel.module.css";
 
 type Props = {
   start: string;
   end: string;
   isInvalid: boolean;
-  onChange: (value: string, type: "start" | "end") => void;
+  onChange: (value: string, type: TimeType) => void;
   compact?: boolean;
 };
 
