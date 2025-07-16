@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import s from "./DateTimeInput.module.css";
+import s from "./dateTimeInput.module.css";
 
 type Props = {
   value: string;

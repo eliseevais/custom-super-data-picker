@@ -1,9 +1,9 @@
-import { CommonlyUsedPanel } from "./CommonlyUsedPanel/CommonlyUsedPanel.tsx";
-import { RecentlyUsedPanel } from "./RecentlyUsedPanel/RecentlyUsedPanel.tsx";
-import { ManualInputPanel } from "./ManualInputPanel/ManualInputPanel.tsx";
-import { CustomContent } from "./CustomContent/CustomContent.tsx";
+import { CommonlyUsed } from "./panels/commonlyUsed";
+import { CustomContent } from "./panels/customContent";
+import { ManualInput } from "./panels/manualInput";
+import { RecentlyUsed } from "./panels/recentlyUsed";
 import type { TimeRange } from "../../types/types.ts";
-import s from "./TimeRangeDropdown.module.css";
+import s from "./dropdownMenu.module.css";
 
 type Props = {
   commonlyUsedItems: { display: string; timeRange: TimeRange }[];
@@ -20,7 +20,7 @@ type Props = {
   compactInputs?: boolean;
 };
 
-export const TimeRangeDropdown = ({
+export const DropdownMenu = ({
   commonlyUsedItems,
   recentlyUsed,
   localStart,
@@ -39,18 +39,18 @@ export const TimeRangeDropdown = ({
       {showCustomContent && <CustomContent />}
 
       {showCommonlyUsed && (
-        <CommonlyUsedPanel
+        <CommonlyUsed
           items={commonlyUsedItems}
           onCommonlyUsed={onCommonlyUsed}
         />
       )}
 
       {showRecentlyUsed && recentlyUsed.length > 0 && (
-        <RecentlyUsedPanel items={recentlyUsed} onSelect={onCommonlyUsed} />
+        <RecentlyUsed items={recentlyUsed} onSelect={onCommonlyUsed} />
       )}
 
       {showManualInput && (
-        <ManualInputPanel
+        <ManualInput
           start={localStart}
           end={localEnd}
           isInvalid={isInvalid}

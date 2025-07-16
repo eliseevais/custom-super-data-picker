@@ -1,5 +1,5 @@
-import { SwitchToggle } from "../SwitchControls/SwitchToggle/SwitchToggle.tsx";
-import s from "./AutoRefreshToggle.module.css";
+import { SwitchToggle } from "../switchToggle";
+import s from "./autoRefreshToggle.module.css";
 
 type Props = {
   isAutoRefreshOn: boolean;

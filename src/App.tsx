@@ -1,5 +1,5 @@
+import { SuperDataPicker } from "./components/superDataPicker";
 import "./App.css";
-import { SuperDataPicker } from "./components/SuperDataPicker/SuperDataPicker.tsx";
 
 function App() {
   return (

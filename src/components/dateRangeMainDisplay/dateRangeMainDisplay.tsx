@@ -1,5 +1,5 @@
 import { FaRegCalendarAlt } from "react-icons/fa";
-import s from "./DateRangeDisplay.module.css";
+import s from "./dateRangeMainDisplay.module.css";
 
 type Props = {
   start: string;
@@ -9,7 +9,7 @@ type Props = {
   compact?: boolean;
 };
 
-export const DateRangeDisplay = ({
+export const DateRangeMainDisplay = ({
   start,
   end,
   onClick,

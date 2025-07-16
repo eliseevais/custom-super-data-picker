@@ -1,8 +1,8 @@
-import { SwitchToggle } from "./SwitchToggle/SwitchToggle";
-import { WidthSelector } from "../WidthSelector/WidthSelector.tsx";
-import { AutoRefreshToggle } from "../AutoRefreshToggle/AutoRefreshToggle.tsx";
+import { SwitchToggle } from "./switchToggle";
+import { WidthSelector } from "./widthSelector";
+import { AutoRefreshToggle } from "./autoRefreshToggle";
 import type { WidthMode } from "../../types/types.ts";
-import s from "./SwitchControls.module.css";
+import s from "./switchControls.module.css";
 
 type Props = {
   showCommonlyUsed: boolean;

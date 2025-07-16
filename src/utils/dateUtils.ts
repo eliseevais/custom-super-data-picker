@@ -16,7 +16,6 @@ export const parseDateString = (dateString: string): Date => {
 
   if (dateString === "now") return now;
 
-  // Обработка выражений вида now-15m, now-1h и т.д.
   if (dateString.startsWith("now-") && !dateString.includes("/")) {
     const amount = parseInt(dateString.substring(4, dateString.length - 1));
     const unit = dateString.substring(dateString.length - 1);
@@ -40,14 +39,13 @@ export const parseDateString = (dateString: string): Date => {
     }
   }
 
-  // Обработка выражений с truncation (например now/d, now/w)
   if (dateString.startsWith("now/")) {
     const unit = dateString.substring(4);
     switch (unit) {
       case "d":
         return startOfDay(now);
       case "w":
-        return startOfWeek(now, { weekStartsOn: 1 }); // понедельник
+        return startOfWeek(now, { weekStartsOn: 1 });
       case "M":
         return startOfMonth(now);
       case "y":
@@ -57,7 +55,6 @@ export const parseDateString = (dateString: string): Date => {
     }
   }
 
-  // Обработка now-1d/d, now-7d/d и подобного
   if (dateString.includes("/")) {
     const [base, truncation] = dateString.split("/");
     const baseDate = parseDateString(base);
@@ -75,7 +72,6 @@ export const parseDateString = (dateString: string): Date => {
     }
   }
 
-  // Если дата — в ISO формате
   const parsed = parseISO(dateString);
   if (!isValid(parsed)) {
     throw new Error(`Invalid date string: ${dateString}`);

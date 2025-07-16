@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from "react";
-import { formatDisplayDate } from "../../utils/dateUtils";
+import { useEffect, useRef, useState } from "react";
 import { constants } from "../../constants/constants";
 import { useTimeRange } from "../../hooks/useTimeRange";
-import { TimeRangeDropdown } from "../TimeRangeDropdown/TimeRangeDropdown";
-import { SwitchControls } from "../SwitchControls/SwitchControls";
-import { DateRangeDisplay } from "../DateRangeDisplay/DateRangeDisplay";
-import { RefreshButton } from "../RefreshButton/RefreshButton";
+import { formatDisplayDate } from "../../utils/dateUtils";
+import { DateRangeMainDisplay } from "../dateRangeMainDisplay";
+import { DropdownMenu } from "../dropdownMenu";
+import { RefreshButton } from "../refreshButton";
+import { SwitchControls } from "../switchControlsPanel";
 import type { WidthMode } from "../../types/types.ts";
 import s from "./SuperDataPicker.module.css";
 
@@ -15,7 +15,6 @@ export const SuperDataPicker = () => {
   const [showCommonlyUsed, setShowCommonlyUsed] = useState(true);
   const [showRecentlyUsed, setShowRecentlyUsed] = useState(true);
   const [showManualInput, setShowManualInput] = useState(true);
-
   const [showCustomContent, setShowCustomContent] = useState(false);
 
   const [showRefreshButton, setShowRefreshButton] = useState(true);
@@ -91,7 +90,7 @@ export const SuperDataPicker = () => {
       />
 
       <div className={s.inputLineAndRefreshButton}>
-        <DateRangeDisplay
+        <DateRangeMainDisplay
           start={formatDisplayDate(timeRange.start)}
           end={formatDisplayDate(timeRange.end)}
           onClick={() => setIsOpen(!isOpen)}
@@ -111,7 +110,7 @@ export const SuperDataPicker = () => {
       </div>
 
       {isOpen && (
-        <TimeRangeDropdown
+        <DropdownMenu
           commonlyUsedItems={constants}
           recentlyUsed={recentlyUsed}
           localStart={localStart}

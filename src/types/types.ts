@@ -3,6 +3,6 @@ export type TimeRange = {
   end: string;
 };
 
-export type WidthMode = "restricted" | "full" | "auto";
-
 export type TimeType = "start" | "end";
+
+export type WidthMode = "restricted" | "full" | "auto";

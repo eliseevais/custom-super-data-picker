@@ -1,5 +1,5 @@
 import { useState } from "react";
-import s from "./CustomContent.module.css";
+import s from "./customContent.module.css";
 
 export const CustomContent = () => {
   const [text, setText] = useState("");

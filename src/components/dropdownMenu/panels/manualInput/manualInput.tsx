@@ -1,6 +1,6 @@
-import { DateTimeInput } from "./DateTimeInput/DateTimeInput.tsx";
-import type { TimeType } from "../../../types/types.ts";
-import s from "./ManualInputPanel.module.css";
+import { DateTimeInput } from "./dateTimeInput";
+import type { TimeType } from "../../../../types/types.ts";
+import s from "./manualInput.module.css";
 
 type Props = {
   start: string;
@@ -10,7 +10,7 @@ type Props = {
   compact?: boolean;
 };
 
-export const ManualInputPanel = ({
+export const ManualInput = ({
   start,
   end,
   isInvalid,
