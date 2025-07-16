@@ -26,7 +26,6 @@ export const SuperDataPicker = () => {
   const [inputLineWidthMode, setInputLineWidthMode] =
     useState<WidthMode>("full");
 
-  // Новые стейты автообновления
   const [isAutoRefreshOn, setIsAutoRefreshOn] = useState(false);
   const [refreshInterval, setRefreshInterval] = useState(5000);
 

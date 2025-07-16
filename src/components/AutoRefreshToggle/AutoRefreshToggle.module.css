@@ -34,8 +34,8 @@ legend {
   color: var(--color-text-dark);
   cursor: pointer;
   transition:
-      border-color 0.3s ease,
-      box-shadow 0.3s ease;
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   width: 5rem;
   appearance: none;
   outline-offset: 1px;
