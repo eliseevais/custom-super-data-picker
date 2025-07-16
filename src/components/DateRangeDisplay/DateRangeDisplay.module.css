@@ -33,3 +33,15 @@
   color: var(--color-primary);
   z-index: 2;
 }
+
+.restricted {
+  width: 23rem;
+}
+
+.full {
+  width: 100%;
+}
+
+.auto {
+  width: auto;
+}

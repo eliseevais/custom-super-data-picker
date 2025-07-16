@@ -22,6 +22,9 @@ export const SuperDataPicker = () => {
   const [refreshIconOnly, setRefreshIconOnly] = useState(false);
 
   const [compactInputs, setCompactInputs] = useState(false);
+  const [inputLineWidthMode, setInputLineWidthMode] = useState<
+    "restricted" | "full" | "auto"
+  >("full");
 
   const {
     timeRange,
@@ -57,6 +60,8 @@ export const SuperDataPicker = () => {
         setRefreshIconOnly={setRefreshIconOnly}
         compactInputs={compactInputs}
         setCompactInputs={setCompactInputs}
+        inputLineWidthMode={inputLineWidthMode}
+        setInputLineWidthMode={setInputLineWidthMode}
       />
 
       <div className={s.inputLineAndRefreshButton}>
@@ -64,6 +69,7 @@ export const SuperDataPicker = () => {
           start={formatDisplayDate(timeRange.start)}
           end={formatDisplayDate(timeRange.end)}
           onClick={() => setIsOpen(!isOpen)}
+          widthMode={inputLineWidthMode}
         />
 
         {showRefreshButton && (

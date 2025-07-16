@@ -21,6 +21,9 @@ type Props = {
 
   compactInputs: boolean;
   setCompactInputs: (value: boolean) => void;
+
+  inputLineWidthMode: "restricted" | "full" | "auto";
+  setInputLineWidthMode: (value: "restricted" | "full" | "auto") => void;
 };
 
 export const SwitchControls = ({
@@ -43,6 +46,9 @@ export const SwitchControls = ({
 
   compactInputs,
   setCompactInputs,
+
+  inputLineWidthMode,
+  setInputLineWidthMode,
 }: Props) => {
   return (
     <div className={s.switchControls}>
@@ -96,6 +102,22 @@ export const SwitchControls = ({
           checked={compactInputs}
           onChange={() => setCompactInputs(!compactInputs)}
         />
+
+        <div className={s.selectWrapper}>
+          <span className={s.selectLabel}>Width: </span>
+          <select
+            value={inputLineWidthMode}
+            onChange={(e) =>
+              setInputLineWidthMode(
+                e.target.value as "restricted" | "full" | "auto",
+              )
+            }
+          >
+            <option value="restricted">Restricted (368px)</option>
+            <option value="full">Full Width (100%)</option>
+            <option value="auto">Auto Width</option>
+          </select>
+        </div>
       </fieldset>
     </div>
   );
