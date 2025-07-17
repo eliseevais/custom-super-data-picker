@@ -1,3 +1,4 @@
+import { memo } from "react";
 import s from "./switchToggle.module.css";
 
 type Props = {
@@ -6,7 +7,7 @@ type Props = {
   onChange: () => void;
 };
 
-export const SwitchToggle = ({ label, checked, onChange }: Props) => (
+export const SwitchToggle = memo(({ label, checked, onChange }: Props) => (
   <div className={s.switchContainer}>
     <label className={s.switch}>
       <input type="checkbox" checked={checked} onChange={onChange} />
@@ -14,4 +15,4 @@ export const SwitchToggle = ({ label, checked, onChange }: Props) => (
     </label>
     <span className={s.switchLabel}>{label}</span>
   </div>
-);
+));

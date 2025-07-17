@@ -1,27 +1,39 @@
+import { type ChangeEvent, type Dispatch, memo, useCallback } from "react";
 import { SwitchToggle } from "../switchToggle";
 import s from "./autoRefreshToggle.module.css";
+import {
+  TOGGLE_AUTO_REFRESH,
+  SET_REFRESH_INTERVAL,
+  type Action,
+  type State,
+} from "../../../types/types.ts";
 
 type Props = {
-  isAutoRefreshOn: boolean;
-  setIsAutoRefreshOn: (value: boolean) => void;
-  refreshInterval: number; // в миллисекундах
-  setRefreshInterval: (value: number) => void;
+  state: Pick<State, "isAutoRefreshOn" | "refreshInterval">;
+  dispatch: Dispatch<Action>;
 };
 
-export const AutoRefreshToggle = ({
-  isAutoRefreshOn,
-  setIsAutoRefreshOn,
-  refreshInterval,
-  setRefreshInterval,
-}: Props) => {
+export const AutoRefreshToggle = memo(({ state, dispatch }: Props) => {
+  const { isAutoRefreshOn, refreshInterval } = state;
   const intervalSeconds = refreshInterval / 1000;
 
-  const onIntervalChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const seconds = Number(e.target.value);
-    if (!isNaN(seconds) && seconds >= 1) {
-      setRefreshInterval(seconds * 1000);
-    }
-  };
+  const handleToggleAutoRefresh = useCallback(
+    () => dispatch({ type: TOGGLE_AUTO_REFRESH }),
+    [dispatch],
+  );
+
+  const handleIntervalChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const seconds = Number(e.target.value);
+      if (!isNaN(seconds) && seconds >= 1) {
+        dispatch({
+          type: SET_REFRESH_INTERVAL,
+          payload: seconds * 1000,
+        });
+      }
+    },
+    [dispatch],
+  );
 
   return (
     <fieldset className={s.controlGroup}>
@@ -29,7 +41,7 @@ export const AutoRefreshToggle = ({
       <SwitchToggle
         label="Enable auto refresh"
         checked={isAutoRefreshOn}
-        onChange={() => setIsAutoRefreshOn(!isAutoRefreshOn)}
+        onChange={handleToggleAutoRefresh}
       />
       <label className={s.intervalWrapper}>
         <span className={s.intervalLabel}>Interval (sec):</span>
@@ -39,10 +51,10 @@ export const AutoRefreshToggle = ({
           step={1}
           value={intervalSeconds}
           disabled={!isAutoRefreshOn}
-          onChange={onIntervalChange}
+          onChange={handleIntervalChange}
           className={s.inputInterval}
         />
       </label>
     </fieldset>
   );
-};
+});

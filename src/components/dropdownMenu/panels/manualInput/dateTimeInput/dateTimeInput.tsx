@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import s from "./dateTimeInput.module.css";
 
@@ -8,13 +8,11 @@ type Props = {
   onChange: (value: string) => void;
 };
 
-export const DateTimeInput = ({ value, placeholder, onChange }: Props) => {
+export const DateTimeInput = memo(({ value, placeholder, onChange }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleIconClick = () => {
-    if (inputRef.current) {
-      inputRef.current.showPicker();
-    }
+    inputRef.current?.showPicker();
   };
 
   return (
@@ -37,4 +35,4 @@ export const DateTimeInput = ({ value, placeholder, onChange }: Props) => {
       </button>
     </div>
   );
-};
+});

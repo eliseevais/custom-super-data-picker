@@ -1,12 +1,13 @@
 import type { TimeRange } from "../../../../types/types.ts";
 import s from "./commonlyUsed.module.css";
+import { memo } from "react";
 
 type Props = {
   items: { display: string; timeRange: TimeRange }[];
   onCommonlyUsed: (range: TimeRange) => void;
 };
 
-export const CommonlyUsed = ({ items, onCommonlyUsed }: Props) => (
+export const CommonlyUsed = memo(({ items, onCommonlyUsed }: Props) => (
   <div className={s.commonlyUsed}>
     <h4 className={s.sectionTitle}>Commonly used</h4>
     <div className={s.commonlyUsedGrid}>
@@ -21,4 +22,4 @@ export const CommonlyUsed = ({ items, onCommonlyUsed }: Props) => (
       ))}
     </div>
   </div>
-);
+));

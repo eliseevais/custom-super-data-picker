@@ -1,13 +1,14 @@
 import { formatDisplayDate } from "../../../../utils/dateUtils.ts";
 import type { TimeRange } from "../../../../types/types.ts";
 import s from "./recentlyUsed.module.css";
+import { memo } from "react";
 
 type Props = {
   items: TimeRange[];
   onSelect: (range: TimeRange) => void;
 };
 
-export const RecentlyUsed = ({ items, onSelect }: Props) => {
+export const RecentlyUsed = memo(({ items, onSelect }: Props) => {
   if (items.length === 0) return null;
 
   return (
@@ -26,4 +27,4 @@ export const RecentlyUsed = ({ items, onSelect }: Props) => {
       </div>
     </div>
   );
-};
+});

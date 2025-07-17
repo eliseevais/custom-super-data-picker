@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import s from "./customContent.module.css";
 
-export const CustomContent = () => {
+export const CustomContent = memo(() => {
   const [text, setText] = useState("");
 
   return (
@@ -16,4 +16,4 @@ export const CustomContent = () => {
       />
     </div>
   );
-};
+});

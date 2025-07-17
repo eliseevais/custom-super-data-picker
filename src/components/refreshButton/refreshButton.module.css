@@ -29,7 +29,7 @@
 
 .filled {
   background: var(--color-primary);
-  color: var(--color-text-light);
+  color: var(--color-bg-white);
 }
 
 .filled:hover {
