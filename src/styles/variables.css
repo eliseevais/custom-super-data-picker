@@ -1,24 +1,24 @@
 :root {
-  --color-primary: #0d47a1;       /* темно-синий — надёжность и деловитость */
-  --color-primary-hover: #1565c0; /* чуть ярче — акцент при наведении */
+  --color-primary: #0d47a1;
+  --color-primary-hover: #1565c0;
   --color-primary-active: #1976d2;
 
-  --color-text-dark: #1c1c1e;     /* почти чёрный, нейтральный */
-  --color-text-medium: #4a4a4f;   /* графитовый серый */
-  --color-text-light: #9e9e9e;    /* приглушенный светлый текст */
+  --color-text-dark: #1c1c1e;
+  --color-text-medium: #4a4a4f;
+  --color-text-light: #9e9e9e;
 
   --color-bg-white: #ffffff;
-  --color-bg-light: #f7f9fc;      /* светлый холодный фон */
-  --color-bg-dark: #e3e7ee;       /* слегка голубовато-серый */
-  --color-bg-grey: #f0f1f5;       /* нейтральный светлый фон */
+  --color-bg-light: #f7f9fc;
+  --color-bg-dark: #e3e7ee;
+  --color-bg-grey: #f0f1f5;
 
   --color-border-light: #d6d9e0;
   --color-border-medium: #b0b8c1;
   --color-border-dark: #8c97a6;
 
-  --color-error: #c62828;         /* деловой, не кричащий красный */
-  --color-warning: #ef6c00;       /* насыщенный янтарный */
-  --color-success: #2e7d32;       /* стабильный зелёный */
+  --color-error: #c62828;
+  --color-warning: #ef6c00;
+  --color-success: #2e7d32;
   --color-disabled: #e0e0e0;
   --color-disabled-text: #9e9e9e;
 
